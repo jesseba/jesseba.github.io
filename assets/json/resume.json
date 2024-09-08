@@ -54,9 +54,11 @@
       "startDate": "2023-08",
       "endDate": "present",
       "score": "",
-      "courses": ["Network Science, Graph Theory, Machine Learning with Graphs, Social Networks, Foundations and Applications of Information Theory, "]
+      "courses": [
+        "Network Science, Graph Theory, Machine Learning with Graphs, Social Networks, Foundations and Applications of Information Theory, "
+      ]
     }
-  ],
+  ]
   // "awards": [
   //   {
   //     "title": "Nobel Prize in Physics",
