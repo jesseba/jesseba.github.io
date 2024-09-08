@@ -46,6 +46,13 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     execjs (2.9.1)
+    faraday (2.11.0)
+      faraday-net_http (>= 2.0, < 3.4)
+      logger
+    faraday-net_http (3.3.0)
+      net-http
+    faraday-retry (2.2.1)
+      faraday (~> 2.0)
     fast-stemmer (1.0.2)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-arm64-darwin)
@@ -162,6 +169,8 @@ GEM
       bigdecimal (~> 3.1)
     namae (1.2.0)
       racc (~> 1.7)
+    net-http (0.4.1)
+      uri
     nokogiri (1.16.7-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.16.7-arm64-darwin)
@@ -197,6 +206,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.5.0)
     unicode_utils (1.4.0)
+    uri (0.13.1)
     webrick (1.8.1)
 
 PLATFORMS
@@ -208,6 +218,7 @@ PLATFORMS
 DEPENDENCIES
   classifier-reborn
   css_parser
+  faraday-retry
   httparty
   jekyll
   jekyll-archives
