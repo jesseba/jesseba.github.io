@@ -1,9 +1,11 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"MIDL":
+  color: "#a3b18a"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Nature":
+  color: "#588157"
 
-"Vision":
-  color: "#009f36"
+"Neuron":
+  color: "#3a5a40"
+
+"Current Biology":
+  color: "#344e41"
