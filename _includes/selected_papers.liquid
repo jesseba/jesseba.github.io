@@ -1,3 +1,13 @@
 <div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+  {% for paper in site.data.selected_papers %}
+    {% if paper.selected %}
+      <div class="paper">
+        <p><strong>{{ paper.title }}</strong></p>
+        <p>{{ paper.authors }}</p>
+        <p>{{ paper.journal }}, {{ paper.year }}</p>
+        {% if paper.abbr %}<p>{{ paper.abbr }}</p>{% endif %}
+        {% if paper.publisher %}<p>Publisher: {{ paper.publisher }}</p>{% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
