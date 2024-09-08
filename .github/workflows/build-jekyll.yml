@@ -3,7 +3,7 @@ name: Build and Deploy to Github Pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - main # Set a branch to deploy
 
 jobs:
   build_and_deploy:
@@ -20,7 +20,7 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Standard usage
-      - uses:  helaili/jekyll-action@v2
+      - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -28,10 +28,10 @@ jobs:
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          jekyll_src: 'sample_site'
+          jekyll_src: "sample_site"
 
       # Specify the target branch (optional)
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          target_branch: 'gh-pages'
+          target_branch: "gh-pages"
