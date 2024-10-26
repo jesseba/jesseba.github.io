@@ -15,7 +15,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: Jesseba, Jesseba Fernando, jesseba, jesseba fernando, jesseba fernando neu # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🧠 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: /assets/img/favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://jesseba.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -199,8 +199,8 @@ collections:
     permalink: /:collection/:title/
 
 announcements:
-  enabled: false
-  scrollable: false # adds a vertical scroll bar if there are more than 3 news items
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
