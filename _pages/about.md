@@ -16,8 +16,11 @@ social: false # includes social icons at the bottom of the page
 
 I'm Jesseba, a Network Science PhD student at Northeastern University. I'm advised by [Dr. Sam Scarpino](https://www.networkscienceinstitute.org/people/samuel-v-scarpino). I'm broadly interested in learning and adaptation in both biological and artificial systems and how one can inform the other.
 
-My research focuses on understanding how networks reorganize during learning and adaptation, bridging neuroscience and artificial intelligence through the lens of network science and statistical physics. I'm particularly interested in how information sharing patterns and network motifs evolve during learning in both biological and artificial neural systems, and governs this reorganization processes?
+My research focuses on understanding how networks reorganize during learning and adaptation, bridging neuroscience and artificial intelligence through the lens of network science and statistical physics. I'm particularly interested in how information sharing patterns and network motifs evolve during learning and what governs this reorganization process.
 
 Before joining Northeastern, I explored problems in systems neuroscience, studying how motivational states influence attention to sensory cues in the [Andermann Lab](https://www.andermannlab.com/). I investigated domain adaptation of medical imaging models with [William Lotter](https://dms.hms.harvard.edu/people/william-lotter) at Dana Farber Cancer Institute. This interdisciplinary background, combining neuroscience, machine learning, and network science, has shaped my current approach to understanding complex adaptive systems.
 
 I'm always eager to collaborate on projects related to learning dynamics, network adaptation, and the intersection of biological and artificial intelligence. Feel free to reach out if you'd like to discuss potential collaborations or just chat about network science!
+ 
+ 
+ 
