@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2024-08-04
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+I attended the [Brains, Minds, and Machines Summer School](https://www.mbl.edu/education/advanced-research-training-courses/course-offerings/brains-minds-and-machines) in Woods Hole, MA and met some amazing people! 
