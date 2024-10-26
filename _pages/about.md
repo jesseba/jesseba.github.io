@@ -20,4 +20,4 @@ My research focuses on understanding how networks reorganize during learning and
 
 Before joining Northeastern, I explored problems in systems neuroscience, studying how motivational states influence attention to sensory cues in the [Andermann Lab](https://www.andermannlab.com/). I investigated domain adaptation of medical imaging models with [William Lotter](https://dms.hms.harvard.edu/people/william-lotter) at Dana Farber Cancer Institute. This interdisciplinary background, combining neuroscience, machine learning, and network science, has shaped my current approach to understanding complex adaptive systems.
 
-I'm always eager to collaborate on projects related to learning dynamics, network adaptation, and the intersection of biological and artificial intelligence. Feel free to reach out if you'd like to discuss potential collaborations or just chat about network science!
+I'm happy to collaborate on projects related to learning dynamics, network adaptation, and the intersection of biological and artificial intelligence. Feel free to reach out if you'd like to discuss potential collaborations or just chat about network science!
