@@ -267,6 +267,7 @@ plugins:
   - jekyll-tabs
   - jekyll-toc
   - jekyll-twitter-plugin
+  - jekyll-bluesky-plugin
   - jemoji
   - jekyll-toc
 

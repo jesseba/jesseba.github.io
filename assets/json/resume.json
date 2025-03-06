@@ -15,9 +15,9 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "richlyn_jesseba",
-        "url": "https://twitter.com/richlyn_jesseba"
+        "network": "BlueSky",
+        "username": "jesseba",
+        "url": "@jesseba.bsky.social"
       }
     ]
   },
