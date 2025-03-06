@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Organizing a Student Research Symposium at the Network Science Institute! Come visit me at my poster, "Adaptive Learning Mechanisms in Mice and Machines"
+Organizing a [Research Symposium at the Network Science Institute](https://www.networkscienceinstitute.org/events/2025-network-science-research-symposium)! Come visit me at my poster, "Adaptive Learning Mechanisms in Mice and Machines"
