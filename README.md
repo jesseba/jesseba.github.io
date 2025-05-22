@@ -3,6 +3,7 @@
 This example demonstrates how to perform Principal Component Analysis (PCA) using scikit-learn.
 
 ## Prerequisites
+
 ```
 numpy
 matplotlib
