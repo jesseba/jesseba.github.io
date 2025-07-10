@@ -404,6 +404,30 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// CV Icon styling
+.cv-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  filter: brightness(0) saturate(100%);
+  transition-property: all 0.2s ease-in-out;
+}
+
+// Dark mode: invert the CV icon to white
+[data-theme="dark"] .cv-icon {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+// Hover effect for CV icon
+.social .contact-icons a:hover .cv-icon {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+// Dark mode hover effect for CV icon
+[data-theme="dark"] .social .contact-icons a:hover .cv-icon {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
 .wechat-modal {
   display: none;
   position: fixed;
