@@ -1,14 +1,19 @@
+"Current Biology":
+  color: "#345995"
+
+"Neuron":
+  color: "#511730"
+
 "MIDL":
-  color: "#a3b18a"
+  color: "#8E443D"
 
 "Nature":
   color: "#588157"
 
-"Neuron":
-  color: "#3a5a40"
-
-"Current Biology":
-  color: "#344e41"
-
 "ArXiv":
-  color: "#67706c"
+  color: "#878E88"
+
+"ICLR":
+  color: "#65743A" #"#67706c"
+
+# next colors : #433863, #702E37,#AD6B58, #988357, #73814C
