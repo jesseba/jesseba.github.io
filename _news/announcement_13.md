@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I will be attenting a Renormalization for AI Safety workshop organized by Principles of Intelligent Behavior in Biological and Social Systems (PIBBSS) held in Cambridge, MA!
+I attended a Renormalization for AI Safety workshop organized by Principles of Intelligent Behavior in Biological and Social Systems (PIBBSS) held in Cambridge, MA!
