@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I gave a contributory talk at the [NetSciX 2025](https://netscix2025.iiti.ac.in/) conference in Indore, India on "From Neurons to Networks: Unraveling Adaptive Learning Mechanisms in Mice and Machines"
+Presented a contributory talk on "From Neurons to Networks: Unraveling Adaptive Learning Mechanisms in Mice and Machines" at [NetSciX 2025](https://netscix2025.iiti.ac.in/) in Indore, India.

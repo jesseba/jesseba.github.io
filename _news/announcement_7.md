@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Officially started my PhD at the [Network Science Institute](https://www.networkscienceinstitute.org/), Northeastern University!
+Started my PhD at the [Network Science Institute](https://www.networkscienceinstitute.org/) (Northeastern University).

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I attended the [Medical Imaging with Deep Learning](https://2024.midl.io/) conference in Paris, France where I gave a poster presentation on "Beyond Structured Attributes: Image-Based Predictive Trends for Chest X-Ray Classification"
+Presented a poster on "Beyond Structured Attributes: Image-Based Predictive Trends for Chest X-Ray Classification" at [Medical Imaging with Deep Learning](https://2024.midl.io/) in Paris, France.

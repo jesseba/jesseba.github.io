@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I gave a spotlight talk at the [Sixth International Conference on the
-Mathematics Of Neuroscience and AI](https://www.neuromonster.org/) about transformer dynamics!
+Gave a spotlight talk on transformer dynamics at the [Sixth International Conference on the Mathematics of Neuroscience and AI](https://www.neuromonster.org/).
