@@ -7,13 +7,13 @@ nav_order: 4
 ---
 
 <p>
-  <a href="{{ '/assets/pdf/Jesseba_CV_feb26.pdf' | relative_url }}" target="_blank" rel="noopener">
+  <a href="{{ '/assets/pdf/Jesseba_CV_feb26_v2.pdf' | relative_url }}" target="_blank" rel="noopener">
     Download PDF
   </a>
 </p>
 <div class="cv-embed">
   <iframe
-    src="{{ '/assets/pdf/Jesseba_CV_feb26.pdf' | relative_url }}"
+    src="{{ '/assets/pdf/Jesseba_CV_feb26_v2.pdf' | relative_url }}"
     title="CV PDF"
     width="100%"
     height="1000"
