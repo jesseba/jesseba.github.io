@@ -148,7 +148,7 @@ body.profile-site #navbar > .container {
     }
   }
 
-  ol.bibliography > li > .row > [class*='col-sm-']:not(.abbr) {
+  ol.bibliography > li > .row > [class*="col-sm-"]:not(.abbr) {
     flex: 1 1 auto;
     min-width: 0;
     max-width: none;

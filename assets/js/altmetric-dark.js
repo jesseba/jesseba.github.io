@@ -35,7 +35,9 @@
     let overlay = link.querySelector(".altmetric-score-overlay");
 
     if (!isDark()) {
-      overlay?.remove();
+      if (overlay) {
+        overlay.remove();
+      }
       return;
     }
 
@@ -65,13 +67,13 @@
   document.addEventListener(
     "altmetric:show",
     function (e) {
-      if (e.target?.classList?.contains("altmetric-embed")) {
+      if (e.target && e.target.classList && e.target.classList.contains("altmetric-embed")) {
         fixEmbed(e.target);
       } else {
         scheduleFix();
       }
     },
-    true,
+    true
   );
 
   new MutationObserver(scheduleFix).observe(document.body, {
