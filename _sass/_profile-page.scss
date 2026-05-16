@@ -164,10 +164,10 @@ body.profile-site #navbar > .container {
     margin-top: 0.35rem;
 
     .citation-count {
-      flex: 0 0 1.5rem;
+      flex: 0 0 2rem;
       position: relative;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       margin: 0;
       overflow: hidden;
       line-height: 0;
@@ -178,7 +178,7 @@ body.profile-site #navbar > .container {
         left: 50%;
         width: 64px;
         height: 64px;
-        transform: translate(-50%, -50%) scale(0.50);
+        transform: translate(-50%, -50%) scale(0.44);
         transform-origin: center center;
         line-height: 0;
 
