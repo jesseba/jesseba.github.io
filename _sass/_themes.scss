@@ -105,41 +105,6 @@ html[data-theme="dark"] {
   .repo-img-dark {
     display: block;
   }
-
-  // Altmetric donut bakes score into img; altmetric-dark.js adds .altmetric-score-overlay
-  .altmetric-embed {
-    a {
-      position: relative;
-      display: inline-block;
-      line-height: 0;
-      color: inherit;
-    }
-
-    ._altmetric_score {
-      color: #{$white-color} !important;
-    }
-
-    .altmetric-score-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 1.35em;
-      min-height: 1.35em;
-      padding: 0.1em;
-      border-radius: 50%;
-      background-color: var(--global-bg-color);
-      color: #{$white-color};
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      line-height: 1;
-      pointer-events: none;
-    }
-  }
 }
 
 html[data-theme-setting="dark"] {

@@ -54,17 +54,28 @@
     margin-top: 0.35rem;
 
     .citation-count {
-      flex-shrink: 0;
-      width: 1.75rem;
-      height: 1.75rem;
+      flex: 0 0 1.5rem;
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
       margin: 0;
       overflow: hidden;
       line-height: 0;
 
       .altmetric-embed {
-        display: inline-block;
-        transform: scale(0.45);
-        transform-origin: top left;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        transform: translate(-50%, -50%) scale(0.32);
+        transform-origin: center center;
+        line-height: 0;
+
+        a,
+        img {
+          display: block;
+        }
       }
     }
 
