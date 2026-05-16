@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="post profile-page">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    {% if page.subtitle %}
+      <p class="desc">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    <section id="about" class="profile-section profile-section--about">
+      <h2 class="profile-section-title">about me</h2>
+      {% if page.profile and page.profile.image %}
+        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3 }}px, (min-width: 576px) 30vw, 95vw{% endcapture %}
+          {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true %}
+        </div>
+      {% endif %}
+      <div class="clearfix">{{ content }}</div>
+    </section>
+
+    {% if page.news and site.announcements.enabled %}
+      <section id="news" class="profile-section">
+        <h2 class="profile-section-title">
+          <a href="{{ '/news/' | relative_url }}">news</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% if page.publications or page.selected_papers %}
+      <section id="publications" class="profile-section profile-section--publications">
+        <h2 class="profile-section-title">publications</h2>
+        <div class="publications">
+          {% if page.selected_papers and page.publications != true %}
+            {% bibliography --query @*[selected=true]* %}
+          {% else %}
+            {% bibliography %}
+          {% endif %}
+        </div>
+        {% if page.selected_papers and page.publications != true %}
+          <p class="profile-more">
+            <a href="{{ '/publications/' | relative_url }}">Full publication list</a>
+          </p>
+        {% endif %}
+      </section>
+    {% endif %}
+  </article>
+</div>

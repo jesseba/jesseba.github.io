@@ -16,14 +16,16 @@ $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
-$purple-color: #152614 !default;
+$purple-color: #6c7239 !default; // light-mode accent (links); darker olive for contrast on white
 $light-purple-color: lighten($purple-color, 25%);
+$grey-color-muted: #5a5a5a !default; // secondary text in light mode
+$divider-color-light: rgba(0, 0, 0, 0.15) !default;
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
 
 $grey-color: #828282 !default;
-$grey-color-light: lighten($grey-color, 40%);
+$grey-color-light: lighten($grey-color, 30%);
 $grey-color-dark: #1c1c1d;
 $grey-900: #212529;
 

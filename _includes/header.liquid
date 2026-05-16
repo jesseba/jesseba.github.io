@@ -2,27 +2,37 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
+      {% if page.layout == 'profile' and page.social %}
+        <!-- Social icons (profile / preview layout) -->
+        <div class="navbar-brand social">{% include social.liquid %}</div>
+      {% else %}
+        {% if page.layout == 'profile' %}
+          {% assign brand_url = page.url | relative_url %}
+        {% else %}
+          {% assign brand_url = site.baseurl | append: '/' %}
+        {% endif %}
+        {% if page.layout == 'profile' or page.permalink != '/' or site.enable_navbar_social == false %}
+          <a class="navbar-brand title font-weight-lighter" href="{{ brand_url }}">
+            {% if site.title == 'blank' %}
+              {% if site.first_name %}
+                <span class="font-weight-bold">
+                  {{- site.first_name -}}
+                </span>
+              {% endif %}
+              {% if site.middle_name %}
+                {{- site.middle_name -}}
+              {% endif %}
+              {% if site.last_name %}
+                {{- site.last_name -}}
+              {% endif %}
+            {% else %}
+              {{- site.title -}}
             {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
+          </a>
+        {% elsif site.enable_navbar_social %}
         <!-- Social Icons -->
         <div class="navbar-brand social">{% include social.liquid %}</div>
+        {% endif %}
       {% endif %}
       <!-- Navbar Toggle -->
       <button
@@ -42,6 +52,7 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
+          {% unless page.layout == 'profile' %}
           {% for page in site.pages %}
             {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
           {% endfor %}
@@ -108,6 +119,7 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          {% endunless %}
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">

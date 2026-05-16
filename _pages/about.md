@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: profile
 title: about
 permalink: /
 subtitle: <a href='https://www.networkscienceinstitute.org/'>Network Science Institute @ Northeastern University</a>.
@@ -7,11 +7,11 @@ subtitle: <a href='https://www.networkscienceinstitute.org/'>Network Science Ins
 profile:
   align: right
   image: IMG_2895.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: true
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+news: true
+publications: true
+social: true
 ---
 
 I'm Jesseba, a Network Science PhD student at Northeastern University. I'm advised by [Dr. Sam Scarpino](https://www.networkscienceinstitute.org/people/samuel-v-scarpino). My research bridges neuroscience and artificial intelligence through network science and information theory.
