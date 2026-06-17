@@ -2,7 +2,7 @@
 layout: page
 permalink: /newsletter/
 title: blog
-description: 
+description:
 nav: true
 nav_order: 1
 ---
