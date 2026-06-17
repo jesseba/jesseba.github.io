@@ -316,9 +316,21 @@ ul.task-list input[type="checkbox"] {
         transition-property: all 0.2s ease-in-out;
       }
 
+      .substack-icon {
+        width: 1em;
+        height: 1em;
+        fill: var(--global-text-color);
+        transition-property: all 0.2s ease-in-out;
+        vertical-align: -0.125em;
+      }
+
       &:hover {
         i::before {
           color: var(--global-theme-color);
+        }
+
+        .substack-icon {
+          fill: var(--global-theme-color);
         }
       }
     }
@@ -391,9 +403,21 @@ ul.task-list input[type="checkbox"] {
         transition-property: all 0.2s ease-in-out;
       }
 
+      .substack-icon {
+        width: 1em;
+        height: 1em;
+        fill: var(--global-text-color);
+        transition-property: all 0.2s ease-in-out;
+        vertical-align: -0.125em;
+      }
+
       &:hover {
         i::before {
           color: var(--global-theme-color);
+        }
+
+        .substack-icon {
+          fill: var(--global-theme-color);
         }
       }
     }

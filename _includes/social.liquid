@@ -60,6 +60,13 @@
 {% if site.medium_username %}
   <a href="https://medium.com/@{{ site.medium_username }}" title="Medium"><i class="fa-brands fa-medium"></i></a>
 {% endif %}
+{% if site.substack_url %}
+  <a href="{{ site.substack_url }}" title="Substack" target="_blank" rel="noopener">
+    <svg class="substack-icon" role="img" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+    </svg>
+  </a>
+{% endif %}
 {% if site.quora_username %}
   <a href="https://www.quora.com/profile/{{ site.quora_username }}" title="Quora"><i class="fa-brands fa-quora"></i></a>
 {% endif %}

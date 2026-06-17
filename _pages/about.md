@@ -19,3 +19,5 @@ I'm Jesseba, a Network Science PhD student at Northeastern University. I'm advis
 I study how learning and adaptation reshape networks in brains and machines. My motivation is identifying the principles that predict when networks reconfigure and how those changes affect information flow and function.
 
 Before joining Northeastern, I explored problems in systems neuroscience, studying how motivational states influence attention to sensory cues in the [Andermann Lab](https://www.andermannlab.com/). I investigated domain adaptation of medical imaging models with [William Lotter](https://ds.dfci.harvard.edu/our-people/bill-lotter/) at Dana Farber Cancer Institute.
+
+In my free time, I co-write [**Of Two Minds**](https://oftwominds.substack.com), a newsletter with my partner, Grigori Guitchounts.
