@@ -40,24 +40,24 @@
   th: 533
   ar: 1.5004
 
-- id: "55477909574"
-  src: "https://live.staticflickr.com/65535/55477909574_c674f4cbe1_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477909574_6e4efacd4a_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477909574/"
-  location: "Ala Archa"
-  caption: ""
-  w: 2048
-  h: 1003
-  tw: 800
-  th: 392
-  ar: 2.0419
-
 - id: "55477851743"
   src: "https://live.staticflickr.com/65535/55477851743_0479736ab8_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477851743_afd1a10350_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477851743/"
   location: "Ala Archa"
-  caption: ""
+  caption: "glacial shower, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477851938"
+  src: "https://live.staticflickr.com/65535/55477851938_d5dcffe295_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477851938_b3c9dd818e_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477851938/"
+  location: "Ala Archa"
+  caption: "moody Ala Archa River, August"
   w: 2048
   h: 1367
   tw: 800
@@ -69,7 +69,7 @@
   thumb: "https://live.staticflickr.com/65535/55477852038_36244bc32e_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477852038/"
   location: "Ala Archa"
-  caption: ""
+  caption: "coffee, August"
   w: 2048
   h: 1367
   tw: 800
@@ -81,7 +81,7 @@
   thumb: "https://live.staticflickr.com/65535/55478127050_ae8bf04a55_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55478127050/"
   location: "Ala Archa"
-  caption: ""
+  caption: "flora, August"
   w: 2048
   h: 1367
   tw: 800
@@ -93,7 +93,7 @@
   thumb: "https://live.staticflickr.com/65535/55477910344_10a9cfabb3_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477910344/"
   location: "Ala Archa"
-  caption: ""
+  caption: "morning rituals, August"
   w: 2048
   h: 1367
   tw: 800
@@ -105,7 +105,7 @@
   thumb: "https://live.staticflickr.com/65535/55478127445_55305a3b16_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55478127445/"
   location: "Ala Archa"
-  caption: ""
+  caption: "camp spot before dinnertime, August"
   w: 2048
   h: 1367
   tw: 800
@@ -117,7 +117,7 @@
   thumb: "https://live.staticflickr.com/65535/55476743492_af5ddc14a6_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55476743492/"
   location: "Ala Archa"
-  caption: ""
+  caption: "Survivor's Path, August"
   w: 2048
   h: 1367
   tw: 800
@@ -129,7 +129,7 @@
   thumb: "https://live.staticflickr.com/65535/55478127490_a7a6fb9946_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55478127490/"
   location: "Ala Archa"
-  caption: ""
+  caption: "Ala Archa peaks, August"
   w: 2048
   h: 1367
   tw: 800
@@ -141,7 +141,7 @@
   thumb: "https://live.staticflickr.com/65535/55477734441_404932c717_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477734441/"
   location: "Ala Archa"
-  caption: ""
+  caption: "moody Survivor's Path, August"
   w: 2048
   h: 1367
   tw: 800
@@ -153,7 +153,7 @@
   thumb: "https://live.staticflickr.com/65535/55477910929_e1c4793cf8_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477910929/"
   location: "Ala Archa"
-  caption: ""
+  caption: "down river, August"
   w: 2048
   h: 1367
   tw: 800
@@ -165,19 +165,7 @@
   thumb: "https://live.staticflickr.com/65535/55477853028_3716c089a6_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477853028/"
   location: "Ala Archa"
-  caption: ""
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
-- id: "55478128040"
-  src: "https://live.staticflickr.com/65535/55478128040_f3226f5f38_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478128040_077a0b7a9c_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478128040/"
-  location: "Ala Archa"
-  caption: ""
+  caption: "horse portrait, August"
   w: 2048
   h: 1367
   tw: 800
@@ -189,7 +177,7 @@
   thumb: "https://live.staticflickr.com/65535/55476744152_7a8ba1197a_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55476744152/"
   location: "Ala Archa"
-  caption: ""
+  caption: "low clouds, August"
   w: 2048
   h: 1367
   tw: 800
@@ -201,7 +189,7 @@
   thumb: "https://live.staticflickr.com/65535/55477853483_fc6570ff17_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477853483/"
   location: "Ala Archa"
-  caption: ""
+  caption: "Ala Archa, August"
   w: 2048
   h: 1367
   tw: 800
@@ -213,7 +201,7 @@
   thumb: "https://live.staticflickr.com/65535/55476744687_1dee47907d_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55476744687/"
   location: "Ala Archa"
-  caption: ""
+  caption: "first glimpse of Tian Shan mountains, August"
   w: 2048
   h: 1367
   tw: 800
@@ -225,7 +213,7 @@
   thumb: "https://live.staticflickr.com/65535/55477911599_6bd51874ac_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477911599/"
   location: "Ala Archa"
-  caption: ""
+  caption: "river and flowers, August"
   w: 2048
   h: 1367
   tw: 800
@@ -237,7 +225,7 @@
   thumb: "https://live.staticflickr.com/65535/55477735381_a89305c932_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477735381/"
   location: "Ala Archa"
-  caption: ""
+  caption: "bridge crossing, August"
   w: 2048
   h: 1367
   tw: 800
@@ -365,13 +353,13 @@
   ar: 1.7778
 
 - id: "55477875598"
-  src: "https://live.staticflickr.com/65535/55477875598_ac3ef971b3_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477875598_02ed579870_c.jpg"
+  src: "https://live.staticflickr.com/65535/55477875598_981ce5fa02_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477875598_f4e864042c_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477875598/"
   location: "Ala Archa to Suusamyr"
   caption: "parking lot of Globus, April"
   w: 2048
-  h: 774
+  h: 766
   tw: 800
-  th: 302
-  ar: 2.646
+  th: 299
+  ar: 2.6736
