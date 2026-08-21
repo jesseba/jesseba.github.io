@@ -518,13 +518,23 @@ def main():
             print("  %s  %s  ar=%s  %s" % (entry["id"], entry.get("location") or "-", entry["ar"], entry["src"]))
         return
 
-    # Group entries by location so re-imports replace cleanly.
-    by_location = {}
-    for entry in entries:
-        by_location.setdefault(entry.get("location", ""), []).append(entry)
-    merged = existing
-    for location, batch in by_location.items():
-        merged = lib.merge(merged, batch, location)
+    # An album or tag import without --location sees the whole collection, so the
+    # manifest is replaced outright. Merging per chapter instead would leave stale
+    # entries behind for any chapter that lost every one of its photographs —
+    # nothing would name that chapter, so nothing would clear it.
+    whole_collection = (args.album or args.tags) and args.location is None
+
+    if whole_collection:
+        merged = entries
+    else:
+        by_location = {}
+        for entry in entries:
+            by_location.setdefault(entry.get("location", ""), []).append(entry)
+        merged = existing
+        for location, batch in by_location.items():
+            merged = lib.merge(merged, batch, location)
+
+    dropped = len(existing) - len([e for e in existing if lib.entry_key(e) in {lib.entry_key(x) for x in merged}])
 
     # Keep page order aligned with _data/photography.yml's locations list.
     order = {name: i for i, name in enumerate(locations or [])}
@@ -532,10 +542,16 @@ def main():
 
     lib.write_manifest(manifest_path, merged, args.slug)
     print(
-        "\nWrote %d entry(ies) (%d total in manifest).\n"
+        "\nWrote %d entry(ies) (%d total in manifest%s).\n"
         "  manifest: _data/photos/%s.yml — add captions there\n"
         "  preview:  bundle exec jekyll serve  ->  /photography/%s/"
-        % (len(entries), len(merged), args.slug, args.slug)
+        % (
+            len(entries),
+            len(merged),
+            ", %d dropped" % dropped if dropped else "",
+            args.slug,
+            args.slug,
+        )
     )
 
 
