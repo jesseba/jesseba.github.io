@@ -208,18 +208,6 @@
   th: 428
   ar: 1.8686
 
-- id: "55477874468"
-  src: "https://live.staticflickr.com/65535/55477874468_a306a068c3_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477874468_2c622c8af4_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477874468/"
-  location: "Ala Archa to Suusamyr"
-  caption: "Up to Too-Ashuu Pass, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55476765642"
   src: "https://live.staticflickr.com/65535/55476765642_6be8abd39d_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55476765642_c8923b30f5_c.jpg"
@@ -237,7 +225,7 @@
   thumb: "https://live.staticflickr.com/65535/55477757051_08ef0ef7f4_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477757051/"
   location: "Ala Archa to Suusamyr"
-  caption: "Up to Too-Ashuu Pass, August42"
+  caption: "Up to Too-Ashuu Pass, August"
   w: 2048
   h: 1496
   tw: 800
@@ -273,24 +261,24 @@
   thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
   location: "Ala Archa to Suusamyr"
-  caption: "Up to Too-Ashuu Pass, AugustC_2222"
+  caption: "Up to Too-Ashuu Pass, August"
   w: 2048
   h: 1367
   tw: 800
   th: 534
   ar: 1.4982
 
-- id: "55477933214"
-  src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
+- id: "55477381222"
+  src: "https://live.staticflickr.com/65535/55477381222_06dd2b6ddf_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477381222_1d8f1f6cce_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477381222/"
   location: "Ala Archa to Suusamyr"
-  caption: "mega hut, April"
+  caption: "mega hut, August"
   w: 2048
-  h: 1367
+  h: 1399
   tw: 800
-  th: 534
-  ar: 1.4982
+  th: 547
+  ar: 1.4639
 
 - id: "55477138122"
   src: "https://live.staticflickr.com/65535/55477138122_ce284428bf_k.jpg"
@@ -328,6 +316,18 @@
   th: 302
   ar: 2.646
 
+- id: "55478578075"
+  src: "https://live.staticflickr.com/65535/55478578075_26648bb73b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478578075_e3d741e27b_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478578075/"
+  location: "Ala-Bel Pass"
+  caption: "Ala-Bel Pass"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
 - id: "55477306517"
   src: "https://live.staticflickr.com/65535/55477306517_5d2d161835_o.jpg"
   thumb: "https://live.staticflickr.com/65535/55477306517_b5c06b9940_c.jpg"
@@ -340,24 +340,24 @@
   th: 800
   ar: 0.7685
 
-- id: "55478690350"
-  src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478690350_efa8d108ae_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
+- id: "55478470954"
+  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
   location: "Ala-Bel Pass"
-  caption: "Toyota Sequoia 2008, August"
+  caption: "wildflowers, August"
   w: 2048
   h: 1367
   tw: 800
   th: 534
   ar: 1.4982
 
-- id: "55478470954"
-  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
+- id: "55478690350"
+  src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478690350_efa8d108ae_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
   location: "Ala-Bel Pass"
-  caption: ""
+  caption: "Toyota Sequoia 2008, August"
   w: 2048
   h: 1367
   tw: 800
@@ -471,18 +471,6 @@
   tw: 800
   th: 533
   ar: 1.5004
-
-- id: "55478578075"
-  src: "https://live.staticflickr.com/65535/55478578075_26648bb73b_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478578075_e3d741e27b_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478578075/"
-  location: "Suusamyr landscapes"
-  caption: "Ala-Bel Pass"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
 
 - id: "55478578125"
   src: "https://live.staticflickr.com/65535/55478578125_2b3f3729e5_k.jpg"
@@ -711,6 +699,18 @@
   tw: 800
   th: 534
   ar: 1.4982
+
+- id: "55478423283"
+  src: "https://live.staticflickr.com/65535/55478423283_34192d1f90_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478423283_ea7eb833bd_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478423283/"
+  location: "Morning rituals"
+  caption: "chores, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
 
 - id: "55477314507"
   src: "https://live.staticflickr.com/65535/55477314507_5f10059af1_k.jpg"
