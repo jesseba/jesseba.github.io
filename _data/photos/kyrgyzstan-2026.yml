@@ -4,6 +4,126 @@
 # Keep them short: place and subject, no exposure data.
 # Order within this file is the order they appear on the page.
 
+- id: "55478582428"
+  src: "https://live.staticflickr.com/65535/55478582428_fc5995f61a_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478582428_4686949585_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478582428/"
+  location: "Bishkek"
+  caption: "accordianist, August"
+  w: 2048
+  h: 1365
+  tw: 800
+  th: 533
+  ar: 1.5004
+
+- id: "55478464691"
+  src: "https://live.staticflickr.com/65535/55478464691_826c7b0ccd_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478464691_b15479ddbe_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478464691/"
+  location: "Bishkek"
+  caption: "Manas, Bishkek"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478637904"
+  src: "https://live.staticflickr.com/65535/55478637904_89f0ca97b9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478637904_959c0cd3fb_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478637904/"
+  location: "Bishkek"
+  caption: "WWII monument, August"
+  w: 2048
+  h: 2048
+  tw: 800
+  th: 800
+  ar: 1.0
+
+- id: "55478582783"
+  src: "https://live.staticflickr.com/65535/55478582783_d7eecd9586_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478582783_3ee6a1d228_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478582783/"
+  location: "Bishkek"
+  caption: "double-scooter, August"
+  w: 1638
+  h: 2048
+  tw: 640
+  th: 800
+  ar: 0.7998
+
+- id: "55477473017"
+  src: "https://live.staticflickr.com/65535/55477473017_fba8eea129_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477473017_e1501c5950_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477473017/"
+  location: "Bishkek"
+  caption: "Kurut, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478638264"
+  src: "https://live.staticflickr.com/65535/55478638264_875b5ffc8d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478638264_02aac9fc69_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478638264/"
+  location: "Bishkek"
+  caption: "soviet-era buildings, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478583018"
+  src: "https://live.staticflickr.com/65535/55478583018_db0c169783_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478583018_a1b7fc922f_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478583018/"
+  location: "Bishkek"
+  caption: "streets of Bishkek, August"
+  w: 2048
+  h: 913
+  tw: 800
+  th: 357
+  ar: 2.2432
+
+- id: "55477473217"
+  src: "https://live.staticflickr.com/65535/55477473217_03ea101065_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477473217_b23d7a08c9_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477473217/"
+  location: "Bishkek"
+  caption: "tree-lined, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478857230"
+  src: "https://live.staticflickr.com/65535/55478857230_352398b899_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478857230_1fee1240a3_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478857230/"
+  location: "Bishkek"
+  caption: "Osh Bazaar, August"
+  w: 2048
+  h: 917
+  tw: 800
+  th: 358
+  ar: 2.2334
+
+- id: "55477473372"
+  src: "https://live.staticflickr.com/65535/55477473372_59069e8257_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477473372_db1d06844e_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477473372/"
+  location: "Bishkek"
+  caption: "Naan at Osh Bazaar, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
 - id: "55477851743"
   src: "https://live.staticflickr.com/65535/55477851743_0479736ab8_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477851743_afd1a10350_c.jpg"
