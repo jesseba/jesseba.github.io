@@ -172,36 +172,12 @@
   th: 534
   ar: 1.4982
 
-- id: "55477910344"
-  src: "https://live.staticflickr.com/65535/55477910344_55fba59f1a_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477910344_10a9cfabb3_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477910344/"
-  location: "Ala Archa"
-  caption: "morning rituals, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55478127445"
   src: "https://live.staticflickr.com/65535/55478127445_f89a3c6496_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478127445_55305a3b16_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55478127445/"
   location: "Ala Archa"
   caption: "camp spot before dinnertime, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
-- id: "55476743492"
-  src: "https://live.staticflickr.com/65535/55476743492_c5e7daf415_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55476743492_af5ddc14a6_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55476743492/"
-  location: "Ala Archa"
-  caption: "Survivor's Path, August"
   w: 2048
   h: 1367
   tw: 800
@@ -315,18 +291,6 @@
   tw: 800
   th: 428
   ar: 1.8686
-
-- id: "55476765642"
-  src: "https://live.staticflickr.com/65535/55476765642_6be8abd39d_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55476765642_c8923b30f5_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55476765642/"
-  location: "Ala Archa to Suusamyr"
-  caption: "Up to Too-Ashuu Pass, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
 
 - id: "55477757051"
   src: "https://live.staticflickr.com/65535/55477757051_b3286fa95f_k.jpg"
@@ -519,18 +483,6 @@
   tw: 800
   th: 534
   ar: 1.4982
-
-- id: "55478577595"
-  src: "https://live.staticflickr.com/65535/55478577595_4242f3d8e8_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478577595_c0506a2bb5_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478577595/"
-  location: "Suusamyr landscapes"
-  caption: "Suusamyr, August"
-  w: 2048
-  h: 1041
-  tw: 800
-  th: 407
-  ar: 1.9673
 
 - id: "55478577630"
   src: "https://live.staticflickr.com/65535/55478577630_53b0294e32_k.jpg"
@@ -886,6 +838,270 @@
   page: "https://www.flickr.com/photos/204941863@N08/55477316177/"
   location: "Morning rituals"
   caption: "everyone needs milk, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478687068"
+  src: "https://live.staticflickr.com/65535/55478687068_f649c74c7a_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478687068_b5b801d6b2_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478687068/"
+  location: "Toi Preparations"
+  caption: "gallop, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478744969"
+  src: "https://live.staticflickr.com/65535/55478744969_fc98be3acc_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478744969_b512b4cb83_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478744969/"
+  location: "Toi Preparations"
+  caption: "ulak players, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478962010"
+  src: "https://live.staticflickr.com/65535/55478962010_13491c91b1_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478962010_53d43c981b_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478962010/"
+  location: "Toi Preparations"
+  caption: "games to start, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478687143"
+  src: "https://live.staticflickr.com/65535/55478687143_9a67750711_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478687143_d283c6edc8_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478687143/"
+  location: "Toi Preparations"
+  caption: "vroom, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55477578677"
+  src: "https://live.staticflickr.com/65535/55477578677_7ff6eb51e9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477578677_ebfdc7fc03_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477578677/"
+  location: "Toi Preparations"
+  caption: "meeting of minds, August"
+  w: 2048
+  h: 1024
+  tw: 800
+  th: 400
+  ar: 2.0
+
+- id: "55478745339"
+  src: "https://live.staticflickr.com/65535/55478745339_3ad8dc8858_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478745339_c985499189_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478745339/"
+  location: "Toi Preparations"
+  caption: "gathering, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478745399"
+  src: "https://live.staticflickr.com/65535/55478745399_5aa5afad77_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478745399_151883a2b2_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478745399/"
+  location: "Toi Preparations"
+  caption: "stereos, August"
+  w: 2048
+  h: 1463
+  tw: 800
+  th: 571
+  ar: 1.3999
+
+- id: "55478745644"
+  src: "https://live.staticflickr.com/65535/55478745644_ccd0a428a8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478745644_b4bafa57a8_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478745644/"
+  location: "Toi Preparations"
+  caption: "gathering, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477579052"
+  src: "https://live.staticflickr.com/65535/55477579052_75c381bdb2_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477579052_6d21dd20f0_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477579052/"
+  location: "Toi Preparations"
+  caption: "gathering, August"
+  w: 2048
+  h: 1638
+  tw: 800
+  th: 640
+  ar: 1.2503
+
+- id: "55477579102"
+  src: "https://live.staticflickr.com/65535/55477579102_9aad904fe2_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477579102_d95d4ddcc9_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477579102/"
+  location: "Toi Preparations"
+  caption: "Toi is a feast, August"
+  w: 2048
+  h: 1365
+  tw: 800
+  th: 533
+  ar: 1.5004
+
+- id: "55478687988"
+  src: "https://live.staticflickr.com/65535/55478687988_33905e1655_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478687988_cbb72f84e5_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478687988/"
+  location: "Toi Preparations"
+  caption: "gathering, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478963165"
+  src: "https://live.staticflickr.com/65535/55478963165_84f5e658e7_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478963165_458816c88a_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478963165/"
+  location: "Toi Preparations"
+  caption: "portrait 1, August"
+  w: 2048
+  h: 2048
+  tw: 800
+  th: 800
+  ar: 1.0
+
+- id: "55478571646"
+  src: "https://live.staticflickr.com/65535/55478571646_ac68110fd8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478571646_8abea7a1a1_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478571646/"
+  location: "Toi Preparations"
+  caption: "gathering, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478688213"
+  src: "https://live.staticflickr.com/65535/55478688213_61ed337703_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478688213_66bd0b7270_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478688213/"
+  location: "Toi Preparations"
+  caption: "pull up, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478963590"
+  src: "https://live.staticflickr.com/65535/55478963590_708c1ab0d3_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478963590_5f5c298a4a_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478963590/"
+  location: "Toi Preparations"
+  caption: "portrait 2, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478963705"
+  src: "https://live.staticflickr.com/65535/55478963705_4994fe03f0_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478963705_b4c6edcd89_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478963705/"
+  location: "Toi Preparations"
+  caption: "horse portraits, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478963770"
+  src: "https://live.staticflickr.com/65535/55478963770_c877ecb952_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478963770_43daf240bf_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478963770/"
+  location: "Toi Preparations"
+  caption: "ulak player in the distance, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478963980"
+  src: "https://live.staticflickr.com/65535/55478963980_71299fd325_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478963980_d290647565_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478963980/"
+  location: "Toi Preparations"
+  caption: "give a dog a bone, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477580222"
+  src: "https://live.staticflickr.com/65535/55477580222_0ac3664d17_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477580222_1a4b2fe7f9_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477580222/"
+  location: "Toi Preparations"
+  caption: "Plov prep, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477580322"
+  src: "https://live.staticflickr.com/65535/55477580322_12f903e1a5_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477580322_6f931094e6_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477580322/"
+  location: "Toi Preparations"
+  caption: "landscape, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478572576"
+  src: "https://live.staticflickr.com/65535/55478572576_871ca81b59_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478572576_5a0a048f94_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478572576/"
+  location: "Toi Preparations"
+  caption: "Plov prep, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478689243"
+  src: "https://live.staticflickr.com/65535/55478689243_9672b9a69d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478689243_6a2ae40cff_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478689243/"
+  location: "Toi Preparations"
+  caption: "Plov prep, August"
   w: 2048
   h: 1367
   tw: 800
