@@ -1,0 +1,39 @@
+{% comment %}
+  Renders one photography collection.
+
+  Params:
+    gallery  collection slug — keys both site.data.photography and site.data.photos
+
+  Grouped collections render a subheading per location in the order given by
+  `locations` in _data/photography.yml; a location with no photos is skipped.
+  Photos with a blank location always render in a trailing untitled block, so
+  nothing in the manifest can silently disappear.
+{% endcomment %}
+
+{% assign meta = site.data.photography | where: 'slug', include.gallery | first %}
+{% assign manifest = site.data.photos[include.gallery] %}
+
+{% if manifest == null or manifest.size == 0 %}
+  <p class="gallery-empty">
+    No photos imported yet. Run <code>bin/import-photos {{ include.gallery }} &lt;source-dir&gt;</code>.
+  </p>
+{% else %}
+  <div class="gallery-body">
+    {% if meta.group_by_location %}
+      {% for location in meta.locations %}
+        {% assign photos = manifest | where: 'location', location %}
+        {% if photos.size > 0 %}
+          <h2 class="gallery-section">{{ location }}</h2>
+          {% include photo_grid.liquid photos=photos gallery=include.gallery %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign unlabeled = manifest | where_exp: 'photo', 'photo.location == blank' %}
+      {% if unlabeled.size > 0 %}
+        {% include photo_grid.liquid photos=unlabeled gallery=include.gallery %}
+      {% endif %}
+    {% else %}
+      {% include photo_grid.liquid photos=manifest gallery=include.gallery %}
+    {% endif %}
+  </div>
+{% endif %}

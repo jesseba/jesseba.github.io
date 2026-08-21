@@ -4,6 +4,8 @@ module.exports = {
   output: "_site/assets/css/",
   skippedContentGlobs: ["_site/assets/**/*.html"],
   safelist: {
-    deep: [/citation-count/, /altmetric-embed/, /publication-actions/],
+    // photo-*/gallery-*: the lightbox builds its markup in JS and some gallery
+    // states (empty collection, missing cover) never appear in the built HTML.
+    deep: [/citation-count/, /altmetric-embed/, /publication-actions/, /^photo-/, /^gallery-/],
   },
 };

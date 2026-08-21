@@ -1,0 +1,444 @@
+#!/usr/bin/env python3
+"""Import photographs into a gallery collection from Flickr.
+
+Runs at build time on your machine and writes a manifest to _data/photos/ with
+Flickr CDN urls and exact pixel dimensions. Nothing is fetched in the browser, so
+no API key ships to visitors and the gallery stays static HTML with no layout
+shift. Images are hotlinked from live.staticflickr.com — Flickr becomes a runtime
+dependency for them, and every photo links back to its Flickr page as Flickr's
+terms require.
+
+Two modes:
+
+  Album (needs FLICKR_API_KEY)
+    bin/import-flickr big-five-2021 --album 72177720312345678 --user jesseba
+
+    Parks come from each photo's Flickr tags, matched against the `locations`
+    list for the collection in _data/photography.yml ("Bryce Canyon" matches the
+    Flickr tag "brycecanyon"). Override for a single-place album with --location.
+
+  Urls (no API key required)
+    bin/import-flickr kyrgyzstan-2026 --urls urls.txt --location ""
+    pbpaste | bin/import-flickr kyrgyzstan-2026 --urls -
+
+    Accepts live.staticflickr.com file urls or flickr.com photo page urls, one
+    per line. Without a key, dimensions are measured by downloading each image,
+    which needs ImageMagick; page urls need a key to resolve.
+
+Re-running replaces just the entries for the location being imported and keeps
+captions you have written by hand.
+
+Get a key at https://www.flickr.com/services/apps/create/apply then:
+    export FLICKR_API_KEY=...
+"""
+
+import argparse
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import urllib.parse
+import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import photolib as lib
+
+API = "https://api.flickr.com/services/rest/"
+
+DISPLAY_TARGET = 2048
+THUMB_TARGET = 900
+
+# getSizes also reports centre-cropped squares; they would corrupt aspect ratios.
+CROPPED_LABELS = {"Square", "Large Square"}
+
+
+def fail(message):
+    sys.exit("error: %s" % message)
+
+
+def call(method, api_key, **params):
+    params.update(method=method, api_key=api_key, format="json", nojsoncallback=1)
+    url = API + "?" + urllib.parse.urlencode(params)
+    try:
+        with urllib.request.urlopen(url, timeout=30) as response:
+            payload = json.load(response)
+    except urllib.error.HTTPError as error:
+        fail("Flickr API returned HTTP %s for %s" % (error.code, method))
+    except urllib.error.URLError as error:
+        fail("could not reach the Flickr API: %s" % error.reason)
+    if payload.get("stat") != "ok":
+        fail("Flickr API: %s (%s)" % (payload.get("message", "unknown"), method))
+    return payload
+
+
+def resolve_user(api_key, who):
+    """Accept an NSID, a username, or a profile/photos url."""
+    if re.fullmatch(r"\d+@N\d+", who):
+        return who
+    if "flickr.com" in who:
+        return call("flickr.urls.lookupUser", api_key, url=who)["user"]["id"]
+    return call("flickr.people.findByUsername", api_key, username=who)["user"]["nsid"]
+
+
+def album_id(value):
+    match = re.search(r"(\d{10,})", value)
+    if not match:
+        fail("could not find an album id in %r" % value)
+    return match.group(1)
+
+
+def photo_id(url):
+    """Pull the photo id out of either a static file url or a photo page url."""
+    match = re.search(r"/(\d+)_[0-9a-f]+", url) or re.search(r"/photos/[^/]+/(\d+)", url)
+    if not match:
+        match = re.search(r"[?&]id=(\d+)", url)
+    return match.group(1) if match else None
+
+
+def pick_sizes(sizes):
+    """Choose a display size and a thumbnail from getSizes output.
+
+    Cropped squares are dropped first so the aspect ratio stays true; both picks
+    are the largest option at or under their target, falling back to the
+    smallest available when even that is bigger.
+    """
+    usable = [
+        {
+            "w": int(s["width"]),
+            "h": int(s["height"]),
+            "source": s["source"],
+            "url": s.get("url", ""),
+            "label": s["label"],
+        }
+        for s in sizes
+        if s.get("media", "photo") == "photo" and s["label"] not in CROPPED_LABELS
+    ]
+    if not usable:
+        return None, None
+    usable.sort(key=lambda s: max(s["w"], s["h"]))
+
+    def largest_within(target):
+        fits = [s for s in usable if max(s["w"], s["h"]) <= target]
+        return fits[-1] if fits else usable[0]
+
+    return largest_within(DISPLAY_TARGET), largest_within(THUMB_TARGET)
+
+
+def page_url(display, fallback_id):
+    """Photo page url — never the static file url, per Flickr's terms."""
+    url = display.get("url") or ""
+    stripped = re.sub(r"/sizes/[^/]*/?$", "/", url)
+    if re.search(r"/photos/[^/]+/\d+", stripped):
+        return stripped
+    return "https://www.flickr.com/photo.gne?id=%s" % fallback_id
+
+
+def caption_from_title(title):
+    """Use a Flickr title only when it is not just a camera filename."""
+    text = (title or "").strip()
+    if not text or re.fullmatch(r"(?i)_?(dsc|dscn|img|p|dji)?[-_ ]?\d{3,}(\.\w+)?", text):
+        return ""
+    return text
+
+
+def location_for(tags, locations, override, default):
+    if override is not None:
+        return override
+    tokens = {lib.normalize_tag(t) for t in (tags or "").split()}
+    for name in locations or []:
+        if lib.normalize_tag(name) in tokens:
+            return name
+    return default
+
+
+def measure_remote(url):
+    """Download and measure an image — the no-API-key path."""
+    if not (shutil.which("magick") or shutil.which("identify")):
+        fail("ImageMagick is needed to measure images without an API key\n"
+             "       (brew install imagemagick), or set FLICKR_API_KEY.")
+    try:
+        with urllib.request.urlopen(url, timeout=30) as response:
+            data = response.read()
+    except Exception as error:  # noqa: BLE001 - report and skip this photo
+        return None
+    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as handle:
+        handle.write(data)
+        temp = handle.name
+    try:
+        exe = shutil.which("magick")
+        cmd = [exe, "identify"] if exe else [shutil.which("identify")]
+        out = subprocess.run(
+            cmd + ["-format", "%w %h", temp + "[0]"],
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.split()
+        return int(out[0]), int(out[1])
+    except subprocess.CalledProcessError:
+        return None
+    finally:
+        os.unlink(temp)
+
+
+STATIC_RE = re.compile(r"^(.*/\d+_[0-9a-f]+)(?:_\w+)?\.(\w+)$")
+
+# Flickr size suffixes, largest first: k=2048 h=1600 b=1024 c=800 z=640 n=320.
+DISPLAY_SUFFIXES = ("k", "h", "b", "c", "z")
+THUMB_SUFFIXES = ("c", "z", "n")
+
+
+def static_variant(url, suffix):
+    match = STATIC_RE.match(url)
+    return "%s_%s.%s" % (match.group(1), suffix, match.group(2)) if match else None
+
+
+def head_ok(url):
+    request = urllib.request.Request(url, method="HEAD")
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            return response.status == 200
+    except Exception:  # noqa: BLE001 - treat any failure as "not available"
+        return False
+
+
+def best_static(url, suffixes):
+    """Pick the largest size Flickr actually serves for this photo.
+
+    Whatever url was pasted may be any size, so probe the ladder rather than
+    trusting it — otherwise a pasted 400px '_w' url becomes the display image
+    while the thumbnail upgrades to 800px, and the grid ends up loading a bigger
+    file than the lightbox opens.
+    """
+    for suffix in suffixes:
+        candidate = static_variant(url, suffix)
+        if candidate and head_ok(candidate):
+            return candidate
+    return url
+
+
+def list_albums(api_key, who):
+    """Print the account's albums with ids, so --album can be copy-pasted."""
+    nsid = resolve_user(api_key, who)
+    sets = call("flickr.photosets.getList", api_key, user_id=nsid)["photosets"]["photoset"]
+    if not sets:
+        print("No albums found for %s (%s)." % (who, nsid))
+        return
+    print("Albums for %s (%s):\n" % (who, nsid))
+    width = max(len(s["id"]) for s in sets)
+    for photoset in sets:
+        print(
+            "  %-*s  %4s photo(s)  %s"
+            % (width, photoset["id"], photoset.get("photos", "?"), photoset["title"]["_content"])
+        )
+    print("\nImport one with:\n  bin/import-flickr <slug> --album <id> --user %s" % who)
+
+
+def from_album(args, api_key, locations):
+    nsid = resolve_user(api_key, args.user)
+    pid = album_id(args.album)
+
+    photos, page = [], 1
+    while True:
+        block = call(
+            "flickr.photosets.getPhotos",
+            api_key,
+            photoset_id=pid,
+            user_id=nsid,
+            extras="tags",
+            per_page=500,
+            page=page,
+        )["photoset"]
+        photos.extend(block["photo"])
+        if page >= int(block.get("pages", 1)):
+            break
+        page += 1
+
+    print("Album %s: %d photo(s)" % (pid, len(photos)))
+    entries = []
+    for index, photo in enumerate(photos, 1):
+        sizes = call("flickr.photos.getSizes", api_key, photo_id=photo["id"])["sizes"]["size"]
+        display, thumb = pick_sizes(sizes)
+        if not display:
+            print("  [%d/%d] %s — no usable size, skipped" % (index, len(photos), photo["id"]))
+            continue
+        location = location_for(photo.get("tags"), locations, args.location, "")
+        print("  [%d/%d] %s  %dx%d  %s" % (index, len(photos), photo["id"], display["w"], display["h"], location or "-"))
+        entries.append(
+            {
+                "id": photo["id"],
+                "src": display["source"],
+                "thumb": thumb["source"],
+                "page": page_url(display, photo["id"]),
+                "location": location,
+                "caption": caption_from_title(photo.get("title")),
+                "w": display["w"],
+                "h": display["h"],
+                "tw": thumb["w"],
+                "th": thumb["h"],
+                "ar": round(display["w"] / display["h"], 4),
+            }
+        )
+    return entries
+
+
+def from_urls(args, api_key, locations):
+    raw = sys.stdin.read() if args.urls == "-" else open(args.urls, encoding="utf-8").read()
+    urls = [line.strip() for line in raw.splitlines() if line.strip() and not line.startswith("#")]
+    if not urls:
+        fail("no urls given")
+
+    print("%d url(s)" % len(urls))
+    entries = []
+    for index, url in enumerate(urls, 1):
+        pid = photo_id(url)
+        if not pid:
+            print("  [%d/%d] %s — could not find a photo id, skipped" % (index, len(urls), url))
+            continue
+
+        if api_key:
+            sizes = call("flickr.photos.getSizes", api_key, photo_id=pid)["sizes"]["size"]
+            display, thumb = pick_sizes(sizes)
+            if not display:
+                print("  [%d/%d] %s — no usable size, skipped" % (index, len(urls), pid))
+                continue
+            src, thumb_src = display["source"], thumb["source"]
+            width, height, tw, th = display["w"], display["h"], thumb["w"], thumb["h"]
+            page = page_url(display, pid)
+        else:
+            if "staticflickr.com" not in url:
+                print("  [%d/%d] %s — page urls need FLICKR_API_KEY, skipped" % (index, len(urls), url))
+                continue
+            src = best_static(url, DISPLAY_SUFFIXES)
+            measured = measure_remote(src)
+            if not measured:
+                print("  [%d/%d] %s — could not measure, skipped" % (index, len(urls), url))
+                continue
+            width, height = measured
+
+            thumb_src = best_static(url, THUMB_SUFFIXES)
+            measured_thumb = measure_remote(thumb_src) if thumb_src != src else measured
+            tw, th = measured_thumb or measured
+            if max(tw, th) > max(width, height):
+                # Never ship a thumbnail heavier than the image it opens.
+                thumb_src, tw, th = src, width, height
+            page = "https://www.flickr.com/photo.gne?id=%s" % pid
+
+        print("  [%d/%d] %s  %dx%d" % (index, len(urls), pid, width, height))
+        entries.append(
+            {
+                "id": pid,
+                "src": src,
+                "thumb": thumb_src,
+                "page": page,
+                "location": args.location or "",
+                "caption": "",
+                "w": width,
+                "h": height,
+                "tw": tw,
+                "th": th,
+                "ar": round(width / height, 4),
+            }
+        )
+    return entries
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Import photographs into a gallery collection from Flickr.",
+        epilog="No images are copied into the repo; the manifest points at Flickr's CDN.",
+    )
+    parser.add_argument("slug", nargs="?", help="collection slug, e.g. big-five-2021")
+    source = parser.add_mutually_exclusive_group()
+    source.add_argument("--album", help="Flickr album (photoset) id or url")
+    source.add_argument("--urls", help="file of Flickr urls, one per line, or - for stdin")
+    parser.add_argument("--user", help="Flickr username, NSID, or profile url (album mode)")
+    parser.add_argument(
+        "--list-albums",
+        action="store_true",
+        help="list the account's albums with their ids and exit (needs --user)",
+    )
+    parser.add_argument(
+        "--location",
+        default=None,
+        help="force one location for the whole batch; pass '' for none. "
+        "Album mode otherwise derives it from each photo's tags.",
+    )
+    parser.add_argument("--dry-run", action="store_true", help="show what would be written and exit")
+    args = parser.parse_args()
+
+    api_key = os.environ.get("FLICKR_API_KEY", "").strip()
+
+    if args.list_albums:
+        if not api_key:
+            fail("listing albums needs FLICKR_API_KEY\n"
+                 "       Get one at https://www.flickr.com/services/apps/create/apply\n"
+                 "       then: export FLICKR_API_KEY=...")
+        if not args.user:
+            fail("--list-albums needs --user (your Flickr username or profile url)")
+        list_albums(api_key, args.user)
+        return
+
+    if not args.slug:
+        parser.error("a collection slug is required")
+    if not (args.album or args.urls):
+        parser.error("one of --album or --urls is required")
+
+    if args.slug not in lib.collection_slugs():
+        fail("unknown collection %r. Known: %s" % (args.slug, ", ".join(lib.collection_slugs()) or "(none)"))
+
+    if args.album and not api_key:
+        fail("album mode needs FLICKR_API_KEY\n"
+             "       Get one at https://www.flickr.com/services/apps/create/apply\n"
+             "       then: export FLICKR_API_KEY=...")
+    if args.album and not args.user:
+        fail("album mode needs --user (Flickr's API requires the album owner)")
+
+    locations = lib.known_locations(args.slug)
+    if args.location:
+        if locations and args.location not in locations:
+            fail(
+                "location %r is not listed for collection %r.\n"
+                "       Known locations: %s"
+                % (args.location, args.slug, ", ".join(locations) or "(none)")
+            )
+
+    entries = from_album(args, api_key, locations) if args.album else from_urls(args, api_key, locations)
+    if not entries:
+        fail("nothing imported")
+
+    manifest_path = os.path.join(lib.DATA_DIR, "%s.yml" % args.slug)
+    existing = lib.read_manifest(manifest_path)
+    entries = lib.carry_captions(existing, entries)
+
+    if args.dry_run:
+        print("\nDry run — would write %d entry(ies) to _data/photos/%s.yml" % (len(entries), args.slug))
+        for entry in entries:
+            print("  %s  %s  ar=%s  %s" % (entry["id"], entry.get("location") or "-", entry["ar"], entry["src"]))
+        return
+
+    # Group entries by location so re-imports replace cleanly.
+    by_location = {}
+    for entry in entries:
+        by_location.setdefault(entry.get("location", ""), []).append(entry)
+    merged = existing
+    for location, batch in by_location.items():
+        merged = lib.merge(merged, batch, location)
+
+    # Keep page order aligned with _data/photography.yml's locations list.
+    order = {name: i for i, name in enumerate(locations or [])}
+    merged.sort(key=lambda e: order.get(e.get("location", ""), len(order)))
+
+    lib.write_manifest(manifest_path, merged, args.slug)
+    print(
+        "\nWrote %d entry(ies) (%d total in manifest).\n"
+        "  manifest: _data/photos/%s.yml — add captions there\n"
+        "  preview:  bundle exec jekyll serve  ->  /photography/%s/"
+        % (len(entries), len(merged), args.slug, args.slug)
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,57 @@
+{% comment %}
+  Justified, no-crop photo grid.
+
+  Params:
+    photos   array of manifest entries
+    gallery  collection slug, used to build local asset paths
+
+  Entries come from either source and are resolved per photo:
+    remote (Flickr)  src, thumb, page
+    local (drive)    file  -> assets/img/photography/<gallery>/[thumbs/]<file>
+
+  `page` is the Flickr photo page. Flickr's terms require embedded images to link
+  back to that page rather than to the live.staticflickr.com file URL, so it is
+  surfaced in the lightbox.
+
+  Layout is pure CSS: each item takes flex-grow and flex-basis proportional to its
+  aspect ratio, so widths within a row come out proportional to aspect ratio and
+  every image in the row lands at the same height without cropping. See
+  _sass/_photography.scss.
+{% endcomment %}
+
+{% assign base = '/assets/img/photography/' | append: include.gallery | append: '/' %}
+
+<div class="photo-grid">
+  {% for photo in include.photos %}
+    {% if photo.src %}
+      {% assign full_src = photo.src %}
+      {% assign thumb_src = photo.thumb | default: photo.src %}
+    {% else %}
+      {% assign full_src = base | append: photo.file | relative_url %}
+      {% assign thumb_src = base | append: 'thumbs/' | append: photo.file | relative_url %}
+    {% endif %}
+    {% assign alt = photo.caption | default: photo.location | default: photo.file %}
+
+    <a
+      class="photo-item"
+      style="--photo-ar: {{ photo.ar }}"
+      href="{{ full_src }}"
+      data-photo
+      data-full-width="{{ photo.w }}"
+      data-full-height="{{ photo.h }}"
+      data-caption="{{ photo.caption | default: photo.location | escape }}"
+      {% if photo.page %}
+        data-page="{{ photo.page }}"
+      {% endif %}
+    >
+      <img
+        src="{{ thumb_src }}"
+        width="{{ photo.tw }}"
+        height="{{ photo.th }}"
+        alt="{{ alt | escape }}"
+        loading="lazy"
+        decoding="async"
+      >
+    </a>
+  {% endfor %}
+</div>
