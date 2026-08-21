@@ -4,42 +4,6 @@
 # Keep them short: place and subject, no exposure data.
 # Order within this file is the order they appear on the page.
 
-- id: "55477370044"
-  src: "https://live.staticflickr.com/65535/55477370044_f2dfbcfeeb_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477370044_443e73018c_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477370044/"
-  location: "Ala Archa"
-  caption: "Ala Archa National Park, August"
-  w: 2048
-  h: 1365
-  tw: 800
-  th: 533
-  ar: 1.5004
-
-- id: "55477370614"
-  src: "https://live.staticflickr.com/65535/55477370614_2835a45def_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477370614_9e9f1200bc_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477370614/"
-  location: "Ala Archa"
-  caption: "Ala-Archa River, August"
-  w: 2048
-  h: 1365
-  tw: 800
-  th: 533
-  ar: 1.5004
-
-- id: "55477196516"
-  src: "https://live.staticflickr.com/65535/55477196516_3019eff9f1_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477196516_4b72f7935b_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477196516/"
-  location: "Ala Archa"
-  caption: "Survivor's Path in Ala Archa, August"
-  w: 2048
-  h: 1365
-  tw: 800
-  th: 533
-  ar: 1.5004
-
 - id: "55477851743"
   src: "https://live.staticflickr.com/65535/55477851743_0479736ab8_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477851743_afd1a10350_c.jpg"
@@ -304,24 +268,24 @@
   th: 340
   ar: 2.354
 
-- id: "55477933219"
-  src: "https://live.staticflickr.com/65535/55477933219_b44bfba212_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
-  location: "Ala Archa to Suusamyr"
-  caption: "Up to Too-Ashuu Pass, AugustC_2222"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55477933214"
   src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
   location: "Ala Archa to Suusamyr"
   caption: "mega hut, April"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477933219"
+  src: "https://live.staticflickr.com/65535/55477933219_b44bfba212_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
+  location: "Ala Archa to Suusamyr"
+  caption: "Up to Too-Ashuu Pass, AugustC_2222"
   w: 2048
   h: 1367
   tw: 800
