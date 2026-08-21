@@ -88,6 +88,98 @@ $photo-row-height: 15rem;
 }
 
 /* -----------------------------------------------------------------------------
+ * Chapter tiles, on a collection page
+ * -------------------------------------------------------------------------- */
+
+.chapter-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.75rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.chapter-tile {
+  color: var(--global-text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-text-color);
+    text-decoration: none;
+
+    .chapter-tile-image img {
+      transform: scale(1.04);
+    }
+
+    h2 {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+.chapter-tile-image {
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: var(--global-code-bg-color);
+  aspect-ratio: 3 / 2;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+}
+
+.chapter-tile-meta {
+  margin-top: 0.6rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+  }
+
+  p {
+    margin: 0.15rem 0 0;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Chapter page: breadcrumb back to the collection, and prev/next
+ * -------------------------------------------------------------------------- */
+
+.chapter-collection {
+  margin: 0 0 0.2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  a {
+    color: var(--global-text-color-light);
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.9rem;
+  max-width: 50rem;
+}
+
+/* -----------------------------------------------------------------------------
  * Justified grid
  *
  * Each item gets flex-grow and flex-basis proportional to its aspect ratio, so
