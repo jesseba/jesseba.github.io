@@ -304,24 +304,24 @@
   th: 340
   ar: 2.354
 
-- id: "55477933214"
-  src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
-  location: "Ala Archa to Suusamyr"
-  caption: "mega hut, April"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55477933219"
   src: "https://live.staticflickr.com/65535/55477933219_b44bfba212_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
   location: "Ala Archa to Suusamyr"
   caption: "Up to Too-Ashuu Pass, AugustC_2222"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477933214"
+  src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
+  location: "Ala Archa to Suusamyr"
+  caption: "mega hut, April"
   w: 2048
   h: 1367
   tw: 800
@@ -363,3 +363,135 @@
   tw: 800
   th: 302
   ar: 2.646
+
+- id: "55478357234"
+  src: "https://live.staticflickr.com/65535/55478357234_6fddaa50a8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478357234_92f028059c_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478357234/"
+  location: "Suusamyr landscapes"
+  caption: "Suus landscapes, August"
+  w: 2048
+  h: 1365
+  tw: 800
+  th: 533
+  ar: 1.5004
+
+- id: "55478357324"
+  src: "https://live.staticflickr.com/65535/55478357324_37653fbb19_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478357324_85b20d76fb_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478357324/"
+  location: "Suusamyr landscapes"
+  caption: "horses at river crossing, August"
+  w: 1358
+  h: 2048
+  tw: 531
+  th: 800
+  ar: 0.6631
+
+- id: "55478577205"
+  src: "https://live.staticflickr.com/65535/55478577205_f4dd074b5c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478577205_e07921b8b9_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478577205/"
+  location: "Suusamyr landscapes"
+  caption: "Suusamyr Jailoo, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478183356"
+  src: "https://live.staticflickr.com/65535/55478183356_0417e86c5e_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478183356_68ac7063ae_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478183356/"
+  location: "Suusamyr landscapes"
+  caption: "Herd, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478577595"
+  src: "https://live.staticflickr.com/65535/55478577595_4242f3d8e8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478577595_c0506a2bb5_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478577595/"
+  location: "Suusamyr landscapes"
+  caption: "Suusamyr, August"
+  w: 2048
+  h: 1041
+  tw: 800
+  th: 407
+  ar: 1.9673
+
+- id: "55478577630"
+  src: "https://live.staticflickr.com/65535/55478577630_53b0294e32_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478577630_308f578803_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478577630/"
+  location: "Suusamyr landscapes"
+  caption: "Another Jailoo, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478357849"
+  src: "https://live.staticflickr.com/65535/55478357849_245ac65206_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478357849_4c033dffd2_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478357849/"
+  location: "Suusamyr landscapes"
+  caption: "Suusamyr river en route to Issyk-kul, August"
+  w: 2048
+  h: 1296
+  tw: 800
+  th: 506
+  ar: 1.5802
+
+- id: "55478577790"
+  src: "https://live.staticflickr.com/65535/55478577790_cfd64bcea8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478577790_9863107ebd_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478577790/"
+  location: "Suusamyr landscapes"
+  caption: "Suus landscapes, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478358084"
+  src: "https://live.staticflickr.com/65535/55478358084_899d291531_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478358084_aaaed94d04_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478358084/"
+  location: "Suusamyr landscapes"
+  caption: "tributaries, August"
+  w: 2048
+  h: 1365
+  tw: 800
+  th: 533
+  ar: 1.5004
+
+- id: "55478578075"
+  src: "https://live.staticflickr.com/65535/55478578075_26648bb73b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478578075_e3d741e27b_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478578075/"
+  location: "Suusamyr landscapes"
+  caption: "Ala-Bel Pass"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478578125"
+  src: "https://live.staticflickr.com/65535/55478578125_2b3f3729e5_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478578125_163d4f763f_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478578125/"
+  location: "Suusamyr landscapes"
+  caption: "leftovers, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
