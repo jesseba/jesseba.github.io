@@ -100,18 +100,6 @@
   th: 534
   ar: 1.4982
 
-- id: "55477734441"
-  src: "https://live.staticflickr.com/65535/55477734441_5c063a7d6d_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477734441_404932c717_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477734441/"
-  location: "Ala Archa"
-  caption: "moody Survivor's Path, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55477910929"
   src: "https://live.staticflickr.com/65535/55477910929_c00671c867_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477910929_e1c4793cf8_c.jpg"
@@ -329,28 +317,16 @@
   ar: 1.4982
 
 - id: "55477306517"
-  src: "https://live.staticflickr.com/65535/55477306517_5d2d161835_o.jpg"
+  src: "https://live.staticflickr.com/65535/55477306517_f822450696_h.jpg"
   thumb: "https://live.staticflickr.com/65535/55477306517_b5c06b9940_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477306517/"
   location: "Ala-Bel Pass"
   caption: "Manas near Ala-Bel Pass, August"
-  w: 1278
-  h: 1663
+  w: 1230
+  h: 1600
   tw: 615
   th: 800
-  ar: 0.7685
-
-- id: "55478470954"
-  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
-  location: "Ala-Bel Pass"
-  caption: "wildflowers, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
+  ar: 0.7688
 
 - id: "55478690350"
   src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
@@ -358,6 +334,18 @@
   page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
   location: "Ala-Bel Pass"
   caption: "Toyota Sequoia 2008, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478470954"
+  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
+  location: "Ala-Bel Pass"
+  caption: "wildflowers, August"
   w: 2048
   h: 1367
   tw: 800
