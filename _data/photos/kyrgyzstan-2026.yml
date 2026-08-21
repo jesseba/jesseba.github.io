@@ -268,24 +268,24 @@
   th: 340
   ar: 2.354
 
-- id: "55477933214"
-  src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
-  location: "Ala Archa to Suusamyr"
-  caption: "mega hut, April"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55477933219"
   src: "https://live.staticflickr.com/65535/55477933219_b44bfba212_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_c.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
   location: "Ala Archa to Suusamyr"
   caption: "Up to Too-Ashuu Pass, AugustC_2222"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477933214"
+  src: "https://live.staticflickr.com/65535/55477933214_da46760352_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477933214_ddaa5da012_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477933214/"
+  location: "Ala Archa to Suusamyr"
+  caption: "mega hut, April"
   w: 2048
   h: 1367
   tw: 800
@@ -327,6 +327,42 @@
   tw: 800
   th: 302
   ar: 2.646
+
+- id: "55477306517"
+  src: "https://live.staticflickr.com/65535/55477306517_5d2d161835_o.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477306517_b5c06b9940_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477306517/"
+  location: "Ala-Bel Pass"
+  caption: "Manas near Ala-Bel Pass, August"
+  w: 1278
+  h: 1663
+  tw: 615
+  th: 800
+  ar: 0.7685
+
+- id: "55478690350"
+  src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478690350_efa8d108ae_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
+  location: "Ala-Bel Pass"
+  caption: "Toyota Sequoia 2008, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478470954"
+  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
+  location: "Ala-Bel Pass"
+  caption: ""
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
 
 - id: "55478357234"
   src: "https://live.staticflickr.com/65535/55478357234_6fddaa50a8_k.jpg"
@@ -454,6 +490,354 @@
   page: "https://www.flickr.com/photos/204941863@N08/55478578125/"
   location: "Suusamyr landscapes"
   caption: "leftovers, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478690575"
+  src: "https://live.staticflickr.com/65535/55478690575_610c086cab_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478690575_bf065bf930_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478690575/"
+  location: "Suusamyr landscapes"
+  caption: "Suus"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478690780"
+  src: "https://live.staticflickr.com/65535/55478690780_e1d8a8d6e6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478690780_916c008185_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478690780/"
+  location: "First Suusamyr homestay"
+  caption: "rolling plains to mountains, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478417533"
+  src: "https://live.staticflickr.com/65535/55478417533_4129ab9d28_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478417533_3684dc9e43_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478417533/"
+  location: "First Suusamyr homestay"
+  caption: "flight risk, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478472744"
+  src: "https://live.staticflickr.com/65535/55478472744_dba7c05fc9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478472744_3fbc05be20_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478472744/"
+  location: "First Suusamyr homestay"
+  caption: "Horse portrait 1, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478693195"
+  src: "https://live.staticflickr.com/65535/55478693195_9fdc0afed2_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478693195_2ef9655e21_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478693195/"
+  location: "First Suusamyr homestay"
+  caption: "Horse portrait 2, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477311017"
+  src: "https://live.staticflickr.com/65535/55477311017_45dcd5b1a9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477311017_464fbc649d_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477311017/"
+  location: "First Suusamyr homestay"
+  caption: "Yin and yang, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478302561"
+  src: "https://live.staticflickr.com/65535/55478302561_867e88861b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478302561_4a35ba1ab0_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478302561/"
+  location: "First Suusamyr homestay"
+  caption: "Horse portrait 3, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478421038"
+  src: "https://live.staticflickr.com/65535/55478421038_6a879666e6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478421038_e1f951e235_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478421038/"
+  location: "First Suusamyr homestay"
+  caption: "grazing, August"
+  w: 2048
+  h: 843
+  tw: 800
+  th: 329
+  ar: 2.4294
+
+- id: "55478303181"
+  src: "https://live.staticflickr.com/65535/55478303181_e340a20b12_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478303181_d70cec3948_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478303181/"
+  location: "First Suusamyr homestay"
+  caption: "Landscape, August"
+  w: 2048
+  h: 1152
+  tw: 800
+  th: 450
+  ar: 1.7778
+
+- id: "55478695355"
+  src: "https://live.staticflickr.com/65535/55478695355_d925a6b549_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478695355_ccb2dc2302_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478695355/"
+  location: "First Suusamyr homestay"
+  caption: "kitten ready for adventures, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478421678"
+  src: "https://live.staticflickr.com/65535/55478421678_41e110ecd4_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478421678_723f96c238_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478421678/"
+  location: "First Suusamyr homestay"
+  caption: "siblings, August"
+  w: 2048
+  h: 2048
+  tw: 800
+  th: 800
+  ar: 1.0
+
+- id: "55478304001"
+  src: "https://live.staticflickr.com/65535/55478304001_5968cabde3_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478304001_5876aea3d4_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478304001/"
+  location: "First Suusamyr homestay"
+  caption: "kitten ready for adventures, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478304091"
+  src: "https://live.staticflickr.com/65535/55478304091_fb43a25b04_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478304091_0302406465_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478304091/"
+  location: "First Suusamyr homestay"
+  caption: "siblings, August"
+  w: 2048
+  h: 1365
+  tw: 800
+  th: 533
+  ar: 1.5004
+
+- id: "55478422208"
+  src: "https://live.staticflickr.com/65535/55478422208_14c43aefd8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478422208_034b9d9f2e_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478422208/"
+  location: "First Suusamyr homestay"
+  caption: "love, August"
+  w: 2048
+  h: 1229
+  tw: 800
+  th: 480
+  ar: 1.6664
+
+- id: "55478696090"
+  src: "https://live.staticflickr.com/65535/55478696090_3b439bc420_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478696090_5b2cb7078c_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478696090/"
+  location: "First Suusamyr homestay"
+  caption: "siblings of a different kind, August"
+  w: 2048
+  h: 2048
+  tw: 800
+  th: 800
+  ar: 1.0
+
+- id: "55478423863"
+  src: "https://live.staticflickr.com/65535/55478423863_b73a5db0e4_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478423863_e197031da5_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478423863/"
+  location: "First Suusamyr homestay"
+  caption: "sunset, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478479494"
+  src: "https://live.staticflickr.com/65535/55478479494_34e02e3387_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478479494_8fc1076637_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478479494/"
+  location: "First Suusamyr homestay"
+  caption: "Leica the space dog, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478696450"
+  src: "https://live.staticflickr.com/65535/55478696450_5a42d6b1ca_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478696450_11b58c7cc5_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478696450/"
+  location: "Morning rituals"
+  caption: "rider at dawn, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477314507"
+  src: "https://live.staticflickr.com/65535/55477314507_5f10059af1_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477314507_cbfd55f616_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477314507/"
+  location: "Morning rituals"
+  caption: "yurt at dawn, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478424228"
+  src: "https://live.staticflickr.com/65535/55478424228_924041105c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478424228_dcd1d5b907_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478424228/"
+  location: "Morning rituals"
+  caption: "coming back after herding, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477315332"
+  src: "https://live.staticflickr.com/65535/55477315332_9c819f5736_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477315332_c318c047f3_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477315332/"
+  location: "Morning rituals"
+  caption: "morning chores, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478425033"
+  src: "https://live.staticflickr.com/65535/55478425033_47f58bd44a_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478425033_7e1350107f_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478425033/"
+  location: "Morning rituals"
+  caption: "everyone needs milk, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478698935"
+  src: "https://live.staticflickr.com/65535/55478698935_37336075a0_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478698935_1e0453e629_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478698935/"
+  location: "Morning rituals"
+  caption: "everyone needs milk, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55477316177"
+  src: "https://live.staticflickr.com/65535/55477316177_0ab30e28f5_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477316177_1f0dd20db1_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477316177/"
+  location: "Morning rituals"
+  caption: "everyone needs milk, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478418793"
+  src: "https://live.staticflickr.com/65535/55478418793_8de6b436c4_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478418793_7177de9a2e_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478418793/"
+  location: "Milking horses for kumys"
+  caption: "Kumys barrel with fresh horse milk, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478419563"
+  src: "https://live.staticflickr.com/65535/55478419563_84bb62b32f_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478419563_c384b8def3_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478419563/"
+  location: "Milking horses for kumys"
+  caption: "Milking horses, August"
+  w: 2048
+  h: 1367
+  tw: 800
+  th: 534
+  ar: 1.4982
+
+- id: "55478301766"
+  src: "https://live.staticflickr.com/65535/55478301766_0f8162d5c6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478301766_de3c623c35_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478301766/"
+  location: "Milking horses for kumys"
+  caption: "Milking horses, August"
+  w: 2048
+  h: 858
+  tw: 800
+  th: 335
+  ar: 2.3869
+
+- id: "55478420278"
+  src: "https://live.staticflickr.com/65535/55478420278_8023fdd605_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478420278_20a6de24a9_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478420278/"
+  location: "Milking horses for kumys"
+  caption: "Milking horses, August"
+  w: 2048
+  h: 1536
+  tw: 800
+  th: 600
+  ar: 1.3333
+
+- id: "55478420843"
+  src: "https://live.staticflickr.com/65535/55478420843_c46da348a3_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478420843_8e1d040da6_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478420843/"
+  location: "Milking horses for kumys"
+  caption: "Milking horses, August"
   w: 2048
   h: 1367
   tw: 800
