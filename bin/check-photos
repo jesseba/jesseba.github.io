@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""Check that every photograph in the manifests is still served.
+
+Photographs are hotlinked from Flickr, so deleting one there (or making it
+private) leaves a dead url in _data/photos/. At runtime assets/js/photo-fallback.js
+hides those quietly, but the manifest still carries them and the index still
+counts them. This reports the dead ones, and prunes them on request.
+
+    bin/check-photos                     # check every collection
+    bin/check-photos kyrgyzstan-2026     # check one
+    bin/check-photos --prune             # drop dead entries from the manifests
+
+Re-importing from Flickr also fixes it, and is usually the better move — it picks
+up anything you have added since. Pruning is for when a photo is gone for good.
+"""
+
+import argparse
+import concurrent.futures
+import os
+import sys
+import urllib.error
+import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import photolib as lib
+
+TIMEOUT = 20
+# Both are load-bearing: `thumb` is what the grid shows, `src` what the viewer opens.
+CHECKED_FIELDS = ("thumb", "src")
+
+
+def status(url):
+    """Return an HTTP status code for url, or None if it could not be reached."""
+    request = urllib.request.Request(url, method="HEAD")
+    try:
+        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+            return response.status
+    except urllib.error.HTTPError as error:
+        return error.code
+    except Exception:  # noqa: BLE001 - network failure is not a dead photo
+        return None
+
+
+def check_entry(entry):
+    """Check one manifest entry. Returns (entry, {field: status}, ok)."""
+    results = {}
+    for field in CHECKED_FIELDS:
+        url = entry.get(field)
+        if url and url.startswith("http"):
+            results[field] = status(url)
+    # Unreachable (None) is treated as alive, so a flaky network never prunes.
+    dead = [f for f, code in results.items() if code is not None and code >= 400]
+    return entry, results, not dead
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Check hotlinked photographs are still served.")
+    parser.add_argument("slugs", nargs="*", help="collections to check (default: all)")
+    parser.add_argument(
+        "--prune",
+        action="store_true",
+        help="remove entries whose images are gone from the manifests",
+    )
+    args = parser.parse_args()
+
+    slugs = args.slugs or lib.collection_slugs()
+    unknown = [s for s in slugs if s not in lib.collection_slugs()]
+    if unknown:
+        sys.exit("error: unknown collection(s): %s" % ", ".join(unknown))
+
+    total_dead = 0
+    for slug in slugs:
+        path = os.path.join(lib.DATA_DIR, "%s.yml" % slug)
+        entries = lib.read_manifest(path)
+        if not entries:
+            print("%s: no manifest yet" % slug)
+            continue
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+            checked = list(pool.map(check_entry, entries))
+
+        alive = [e for e, _, ok in checked if ok]
+        dead = [(e, r) for e, r, ok in checked if not ok]
+        total_dead += len(dead)
+
+        print("%s: %d checked, %d ok, %d gone" % (slug, len(entries), len(alive), len(dead)))
+        for entry, results in dead:
+            codes = ", ".join("%s=%s" % (f, c) for f, c in sorted(results.items()))
+            label = entry.get("caption") or entry.get("location") or ""
+            print("  gone  %s  %s  %s" % (entry.get("id") or entry.get("file"), codes, label))
+
+        if dead and args.prune:
+            lib.write_manifest(path, alive, slug)
+            print("  pruned %d entry(ies) from _data/photos/%s.yml" % (len(dead), slug))
+
+    if total_dead and not args.prune:
+        print("\nRe-import to refresh, or re-run with --prune to drop them.")
+    sys.exit(1 if total_dead else 0)
+
+
+if __name__ == "__main__":
+    main()

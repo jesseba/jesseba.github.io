@@ -7,8 +7,19 @@
 (function () {
   "use strict";
 
-  var items = Array.prototype.slice.call(document.querySelectorAll("a[data-photo]"));
-  if (!items.length) return;
+  var all = Array.prototype.slice.call(document.querySelectorAll("a[data-photo]"));
+  if (!all.length) return;
+
+  // Recomputed each time the viewer opens, so photographs that photo-fallback.js
+  // has hidden (deleted on Flickr since the last import) drop out of the sequence
+  // rather than showing up as a blank frame under the arrow keys.
+  var items = all;
+
+  function refresh() {
+    items = all.filter(function (el) {
+      return !el.hidden && el.offsetParent !== null;
+    });
+  }
 
   var index = -1;
   var overlay, figure, image, caption, counter, source, prevBtn, nextBtn, lastFocused;
@@ -49,6 +60,14 @@
       show(index + 1);
     });
 
+    // A thumbnail can load while the full size has gone; say so rather than
+    // leaving an empty frame open.
+    image.addEventListener("error", function () {
+      if (!image.getAttribute("src")) return;
+      figure.classList.add("photo-lightbox-missing");
+      caption.textContent = "This photograph is no longer available.";
+    });
+
     // Click the backdrop (but not the photo itself) to dismiss.
     overlay.addEventListener("click", function (event) {
       if (!figure.contains(event.target)) close();
@@ -71,6 +90,8 @@
     var text = item.getAttribute("data-caption") || "";
     var w = item.getAttribute("data-full-width");
     var h = item.getAttribute("data-full-height");
+
+    figure.classList.remove("photo-lightbox-missing");
 
     // Reserve the right box before the full image lands, so nothing jumps.
     if (w && h) image.style.aspectRatio = w + " / " + h;
@@ -109,12 +130,14 @@
 
   build();
 
-  items.forEach(function (item, i) {
+  all.forEach(function (item) {
     item.addEventListener("click", function (event) {
       // Leave modified clicks alone so "open in new tab" still works.
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      open(i);
+      refresh();
+      var position = items.indexOf(item);
+      if (position !== -1) open(position);
     });
   });
 
