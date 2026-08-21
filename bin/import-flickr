@@ -62,6 +62,11 @@ THUMB_TARGET = 900
 # getSizes also reports centre-cropped squares; they would corrupt aspect ratios.
 CROPPED_LABELS = {"Square", "Large Square"}
 
+# Flickr refuses to serve the Original size to a browser cross-site — the url
+# answers 200 to curl but fails to load in an <img>, so it must never be picked
+# for a hotlinked gallery. Every other size hotlinks fine.
+UNSERVABLE_LABELS = {"Original"}
+
 # flickr.photos.search caps how many tags one query may carry.
 TAG_BATCH = 18
 
@@ -112,9 +117,10 @@ def photo_id(url):
 def pick_sizes(sizes):
     """Choose a display size and a thumbnail from getSizes output.
 
-    Cropped squares are dropped first so the aspect ratio stays true; both picks
-    are the largest option at or under their target, falling back to the
-    smallest available when even that is bigger.
+    Cropped squares and the un-hotlinkable Original are dropped first, so the
+    aspect ratio stays true and every url actually loads in a browser. Both picks
+    are then the largest remaining option at or under their target, falling back
+    to the smallest available when even that is bigger.
     """
     usable = [
         {
@@ -125,7 +131,9 @@ def pick_sizes(sizes):
             "label": s["label"],
         }
         for s in sizes
-        if s.get("media", "photo") == "photo" and s["label"] not in CROPPED_LABELS
+        if s.get("media", "photo") == "photo"
+        and s["label"] not in CROPPED_LABELS
+        and s["label"] not in UNSERVABLE_LABELS
     ]
     if not usable:
         return None, None
