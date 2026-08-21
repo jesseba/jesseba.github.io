@@ -412,24 +412,24 @@
   th: 640
   ar: 0.7688
 
-- id: "55478690350"
-  src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478690350_efa8d108ae_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
-  location: "Ala-Bel Pass"
-  caption: "Toyota Sequoia 2008, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55478470954"
   src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
   location: "Ala-Bel Pass"
   caption: "wildflowers, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55478690350"
+  src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478690350_efa8d108ae_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478690350/"
+  location: "Ala-Bel Pass"
+  caption: "Toyota Sequoia 2008, August"
   w: 2048
   h: 1367
   tw: 640
@@ -1299,6 +1299,102 @@
   tw: 640
   th: 360
   ar: 1.7778
+
+- id: "55479076171"
+  src: "https://live.staticflickr.com/65535/55479076171_bfc4d2f3fa_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479076171_dee1d4e4ba_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479076171/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1024
+  tw: 640
+  th: 320
+  ar: 2.0
+
+- id: "55479468665"
+  src: "https://live.staticflickr.com/65535/55479468665_66d8667fa9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479468665_fb41f0cb5b_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479468665/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1152
+  tw: 640
+  th: 360
+  ar: 1.7778
+
+- id: "55479076636"
+  src: "https://live.staticflickr.com/65535/55479076636_1c57b8802d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479076636_f979b474e7_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479076636/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55479076691"
+  src: "https://live.staticflickr.com/65535/55479076691_fb1cc4501f_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479076691_72fc9083eb_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479076691/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55479192243"
+  src: "https://live.staticflickr.com/65535/55479192243_7433b39b8c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479192243_8ca9a96c1c_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479192243/"
+  location: "Kyz Kuumai"
+  caption: "if she wins, she chases the boy in round 2, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55479253119"
+  src: "https://live.staticflickr.com/65535/55479253119_39fecfca8a_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479253119_8f06ddbd66_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479253119/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55479077206"
+  src: "https://live.staticflickr.com/65535/55479077206_9fbb54ff22_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479077206_8cf3299d78_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479077206/"
+  location: "Kyz Kuumai"
+  caption: "first the girl is chased by boy, August"
+  w: 2048
+  h: 793
+  tw: 640
+  th: 248
+  ar: 2.5826
+
+- id: "55479469375"
+  src: "https://live.staticflickr.com/65535/55479469375_5b9114f301_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479469375_622c5f92b7_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479469375/"
+  location: "Kyz Kuumai"
+  caption: "kyz kuumai, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
 
 - id: "55478418793"
   src: "https://live.staticflickr.com/65535/55478418793_8de6b436c4_k.jpg"
