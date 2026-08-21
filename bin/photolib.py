@@ -123,14 +123,22 @@ def merge(existing, fresh, location):
     return kept + fresh
 
 
-def known_locations(slug):
-    """Scrape the `locations` list for a collection out of _data/photography.yml."""
+def chapters(slug):
+    """Return a collection's chapters as [{"name", "tag"}, ...] in config order.
+
+    Entries in _data/photography.yml may be either a bare string (tag derived
+    from the name) or a mapping with `name` and an optional `tag`. An explicit
+    tag decouples the heading from what is tagged on Flickr, so renaming a
+    chapter does not orphan photos already tagged.
+    """
     if not os.path.exists(COLLECTIONS):
         return None
     found, in_block, in_list = None, False, False
     with open(COLLECTIONS, encoding="utf-8") as handle:
         for raw in handle:
             line = raw.rstrip("\n")
+            if line.lstrip().startswith("#"):
+                continue
             if re.match(r"^-\s+slug:", line):
                 in_block = unquote(line.split(":", 1)[1]) == slug
                 in_list = False
@@ -142,16 +150,36 @@ def known_locations(slug):
                 tail = line.split(":", 1)[1].strip()
                 if tail.startswith("["):  # inline list
                     inner = tail.strip("[]").strip()
-                    found = [unquote(x) for x in inner.split(",") if x.strip()]
+                    found = [{"name": unquote(x)} for x in inner.split(",") if x.strip()]
                     in_list = False
                 continue
-            if in_list:
-                match = re.match(r"^\s+-\s+(.*)$", line)
-                if match:
-                    found.append(unquote(match.group(1)))
-                elif line.strip():
-                    in_list = False
+            if not in_list:
+                continue
+
+            item = re.match(r"^\s+-\s+(.*)$", line)
+            if item:
+                body = item.group(1)
+                keyed = re.match(r"^name:\s*(.*)$", body)
+                found.append({"name": unquote(keyed.group(1))} if keyed else {"name": unquote(body)})
+                continue
+            # Continuation line of the entry above, e.g. `  tag: zion`.
+            field = re.match(r"^\s+(\w+):\s*(.*)$", line)
+            if field and found:
+                found[-1][field.group(1)] = unquote(field.group(2))
+            elif line.strip():
+                in_list = False
+
+    if found is None:
+        return None
+    for chapter in found:
+        chapter.setdefault("tag", chapter["name"])
     return found
+
+
+def known_locations(slug):
+    """Chapter display names, in config order."""
+    found = chapters(slug)
+    return None if found is None else [c["name"] for c in found]
 
 
 def collection_slugs():

@@ -20,10 +20,16 @@
 {% else %}
   <div class="gallery-body">
     {% if meta.group_by_location %}
-      {% for location in meta.locations %}
-        {% assign photos = manifest | where: 'location', location %}
+      {% for chapter in meta.locations %}
+        {% comment %}
+          Entries carry `name` (the heading) and optionally `tag`; a bare string
+          is still accepted, in which case it is the name itself. The manifest
+          stores the display name, which is what we group on here.
+        {% endcomment %}
+        {% assign chapter_name = chapter.name | default: chapter %}
+        {% assign photos = manifest | where: 'location', chapter_name %}
         {% if photos.size > 0 %}
-          <h2 class="gallery-section">{{ location }}</h2>
+          <h2 class="gallery-section">{{ chapter_name }}</h2>
           {% include photo_grid.liquid photos=photos gallery=include.gallery %}
         {% endif %}
       {% endfor %}
