@@ -196,18 +196,6 @@
   th: 534
   ar: 1.4982
 
-- id: "55476744687"
-  src: "https://live.staticflickr.com/65535/55476744687_6da85d8148_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55476744687_1dee47907d_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55476744687/"
-  location: "Ala Archa"
-  caption: "first glimpse of Tian Shan mountains, August"
-  w: 2048
-  h: 1367
-  tw: 800
-  th: 534
-  ar: 1.4982
-
 - id: "55477911599"
   src: "https://live.staticflickr.com/65535/55477911599_df9948da4f_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477911599_6bd51874ac_c.jpg"
@@ -232,17 +220,17 @@
   th: 534
   ar: 1.4982
 
-- id: "55477931969"
-  src: "https://live.staticflickr.com/65535/55477931969_247c095ac6_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477931969_8bf34bd527_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477931969/"
-  location: "Ala Archa to Suusamyr"
-  caption: "Other side of Too-Ashuu Tunnel, August"
+- id: "55476744687"
+  src: "https://live.staticflickr.com/65535/55476744687_9b77b0a55c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55476744687_31d7ef2ed8_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55476744687/"
+  location: "Ala Archa"
+  caption: "first glimpse of Tian Shan mountains, August"
   w: 2048
-  h: 874
+  h: 1193
   tw: 800
-  th: 342
-  ar: 2.3432
+  th: 466
+  ar: 1.7167
 
 - id: "55478149700"
   src: "https://live.staticflickr.com/65535/55478149700_462830b847_k.jpg"
@@ -352,18 +340,6 @@
   th: 450
   ar: 1.7778
 
-- id: "55477875598"
-  src: "https://live.staticflickr.com/65535/55477875598_981ce5fa02_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477875598_f4e864042c_c.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477875598/"
-  location: "Ala Archa to Suusamyr"
-  caption: "parking lot of Globus, April"
-  w: 2048
-  h: 766
-  tw: 800
-  th: 299
-  ar: 2.6736
-
 - id: "55477138122"
   src: "https://live.staticflickr.com/65535/55477138122_ce284428bf_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477138122_945eed99c1_c.jpg"
@@ -375,3 +351,27 @@
   tw: 800
   th: 450
   ar: 1.7778
+
+- id: "55478317374"
+  src: "https://live.staticflickr.com/65535/55478317374_0f4539ef6d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478317374_402b51ab56_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478317374/"
+  location: "Ala Archa to Suusamyr"
+  caption: "Other side of Too-Ashuu Pass, August"
+  w: 2048
+  h: 874
+  tw: 800
+  th: 342
+  ar: 2.3432
+
+- id: "55477165802"
+  src: "https://live.staticflickr.com/65535/55477165802_83a79f61c0_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55477165802_ff57d29b65_c.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55477165802/"
+  location: "Ala Archa to Suusamyr"
+  caption: "parking lot of Globus, August"
+  w: 2048
+  h: 774
+  tw: 800
+  th: 302
+  ar: 2.646
