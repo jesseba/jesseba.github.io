@@ -1,3 +1,6 @@
+{% if page.gallery or page.photography %}
+  <script defer src="{{ '/assets/js/photo-fallback.js' | relative_url }}" type="text/javascript"></script>
+{% endif %}
 {% if page.gallery %}
   <script defer src="{{ '/assets/js/photo-lightbox.js' | relative_url }}" type="text/javascript"></script>
 {% endif %}

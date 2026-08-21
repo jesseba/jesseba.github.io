@@ -187,6 +187,15 @@ $photo-row-height: 15rem;
   }
 }
 
+/* Photographs Flickr no longer serves, hidden by photo-fallback.js. The
+ * attribute selector is needed to outrank the one-up mobile rule above, which
+ * sets display on .photo-item directly. */
+.photo-item[hidden],
+.photo-grid[hidden],
+.gallery-section[hidden] {
+  display: none;
+}
+
 /* -----------------------------------------------------------------------------
  * Lightbox
  * -------------------------------------------------------------------------- */
@@ -218,6 +227,11 @@ body.photo-lightbox-open {
   margin: 0;
   max-width: 100%;
   max-height: 100%;
+
+  /* Full size gone from Flickr: drop the empty frame, keep the caption. */
+  &.photo-lightbox-missing img {
+    display: none;
+  }
 
   img {
     display: block;
