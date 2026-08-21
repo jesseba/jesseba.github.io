@@ -8,14 +8,22 @@ shift. Images are hotlinked from live.staticflickr.com — Flickr becomes a runt
 dependency for them, and every photo links back to its Flickr page as Flickr's
 terms require.
 
-Two modes:
+Three modes:
 
   Album (needs FLICKR_API_KEY)
     bin/import-flickr big-five-2021 --album 72177720312345678 --user jesseba
 
-    Parks come from each photo's Flickr tags, matched against the `locations`
-    list for the collection in _data/photography.yml ("Bryce Canyon" matches the
-    Flickr tag "brycecanyon"). Override for a single-place album with --location.
+    Chapters come from each photo's Flickr tags, matched against the chapters
+    for the collection in _data/photography.yml. Only photos that are actually
+    members of the album are seen. Override for a single-place album with
+    --location.
+
+  Tags (needs FLICKR_API_KEY)
+    bin/import-flickr kyrgyzstan-2026 --tags --user jesseba
+
+    Pulls everything in the photostream tagged with any of the collection's
+    chapter tags. Album membership on Flickr is a separate step from uploading
+    and tagging, so albums lag behind; this mode sidesteps that.
 
   Urls (no API key required)
     bin/import-flickr kyrgyzstan-2026 --urls urls.txt --location ""
@@ -25,7 +33,7 @@ Two modes:
     per line. Without a key, dimensions are measured by downloading each image,
     which needs ImageMagick; page urls need a key to resolve.
 
-Re-running replaces just the entries for the location being imported and keeps
+Re-running replaces just the entries for the chapters being imported and keeps
 captions you have written by hand.
 
 Get a key at https://www.flickr.com/services/apps/create/apply then:
@@ -53,6 +61,9 @@ THUMB_TARGET = 900
 
 # getSizes also reports centre-cropped squares; they would corrupt aspect ratios.
 CROPPED_LABELS = {"Square", "Large Square"}
+
+# flickr.photos.search caps how many tags one query may carry.
+TAG_BATCH = 18
 
 
 def fail(message):
@@ -289,6 +300,73 @@ def from_album(args, api_key, chapters):
     return entries
 
 
+def from_tags(args, api_key, chapters):
+    """Import every photo in the photostream carrying one of the chapter tags.
+
+    Album membership is a separate step on Flickr from uploading and tagging, so
+    an album routinely lags behind what has actually been tagged. Since chapters
+    are defined by tags anyway, searching the photostream avoids that mismatch
+    entirely. Within a chapter, photos are ordered by capture time.
+    """
+    nsid = resolve_user(api_key, args.user)
+    all_tags = [c["tag"] for c in chapters or []]
+    if not all_tags:
+        fail("collection %r has no chapters to match tags against" % args.slug)
+
+    # flickr.photos.search rejects long tag lists ("Too many tags in query"), so
+    # search in batches and merge, keyed by photo id to drop the overlaps.
+    found = {}
+    for start in range(0, len(all_tags), TAG_BATCH):
+        batch = all_tags[start : start + TAG_BATCH]
+        page = 1
+        while True:
+            block = call(
+                "flickr.photos.search",
+                api_key,
+                user_id=nsid,
+                tags=",".join(batch),
+                tag_mode="any",
+                extras="tags,date_taken",
+                per_page=500,
+                page=page,
+            )["photos"]
+            for photo in block["photo"]:
+                found[photo["id"]] = photo
+            if page >= int(block.get("pages", 1)):
+                break
+            page += 1
+
+    photos = list(found.values())
+    print("Photostream: %d photo(s) matching %d chapter tag(s)" % (len(photos), len(all_tags)))
+    photos.sort(key=lambda p: p.get("datetaken", ""))
+
+    entries = []
+    for index, photo in enumerate(photos, 1):
+        sizes = call("flickr.photos.getSizes", api_key, photo_id=photo["id"])["sizes"]["size"]
+        display, thumb = pick_sizes(sizes)
+        if not display:
+            print("  [%d/%d] %s — no usable size, skipped" % (index, len(photos), photo["id"]))
+            continue
+        location = location_for(photo.get("tags"), chapters, args.location, "")
+        print("  [%d/%d] %s  %dx%d  %s" % (index, len(photos), photo["id"], display["w"], display["h"], location or "-"))
+        entries.append(
+            {
+                "id": photo["id"],
+                "src": display["source"],
+                "thumb": thumb["source"],
+                "page": page_url(display, photo["id"]),
+                "location": location,
+                "caption": caption_from_title(photo.get("title")),
+                "w": display["w"],
+                "h": display["h"],
+                "tw": thumb["w"],
+                "th": thumb["h"],
+                "ar": round(display["w"] / display["h"], 4),
+            }
+        )
+    return entries
+
+
 def from_urls(args, api_key, chapters):
     raw = sys.stdin.read() if args.urls == "-" else open(args.urls, encoding="utf-8").read()
     urls = [line.strip() for line in raw.splitlines() if line.strip() and not line.startswith("#")]
@@ -359,6 +437,12 @@ def main():
     source = parser.add_mutually_exclusive_group()
     source.add_argument("--album", help="Flickr album (photoset) id or url")
     source.add_argument("--urls", help="file of Flickr urls, one per line, or - for stdin")
+    source.add_argument(
+        "--tags",
+        action="store_true",
+        help="import every photo in the photostream tagged with any of this "
+        "collection's chapter tags, ignoring album membership",
+    )
     parser.add_argument("--user", help="Flickr username, NSID, or profile url (album mode)")
     parser.add_argument(
         "--list-albums",
@@ -388,12 +472,16 @@ def main():
 
     if not args.slug:
         parser.error("a collection slug is required")
-    if not (args.album or args.urls):
-        parser.error("one of --album or --urls is required")
+    if not (args.album or args.urls or args.tags):
+        parser.error("one of --album, --tags or --urls is required")
 
     if args.slug not in lib.collection_slugs():
         fail("unknown collection %r. Known: %s" % (args.slug, ", ".join(lib.collection_slugs()) or "(none)"))
 
+    if args.tags and not api_key:
+        fail("tag mode needs FLICKR_API_KEY")
+    if args.tags and not args.user:
+        fail("tag mode needs --user")
     if args.album and not api_key:
         fail("album mode needs FLICKR_API_KEY\n"
              "       Get one at https://www.flickr.com/services/apps/create/apply\n"
@@ -411,7 +499,12 @@ def main():
                 % (args.location, args.slug, ", ".join(locations) or "(none)")
             )
 
-    entries = from_album(args, api_key, chapters) if args.album else from_urls(args, api_key, chapters)
+    if args.album:
+        entries = from_album(args, api_key, chapters)
+    elif args.tags:
+        entries = from_tags(args, api_key, chapters)
+    else:
+        entries = from_urls(args, api_key, chapters)
     if not entries:
         fail("nothing imported")
 
