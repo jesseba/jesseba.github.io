@@ -1,0 +1,35 @@
+{% comment %}
+  Chapter tiles for a collection page.
+
+  Params:
+    gallery  collection slug
+
+  `chapters` is attached to each collection by _plugins/photography-chapters.rb
+  and already excludes empty chapters, so this only lays them out. Falls back to
+  one continuous grid when a collection is not chapter-grouped.
+{% endcomment %}
+
+{% assign meta = site.data.photography | where: 'slug', include.gallery | first %}
+
+<div class="chapter-index">
+  {% for chapter in meta.chapters %}
+    {% assign cover = chapter.cover %}
+    {% assign cover_src = cover.thumb | default: cover.src %}
+
+    <a class="chapter-tile" href="{{ '/photography/' | append: include.gallery | append: '/' | append: chapter.url | append: '/' | relative_url }}">
+      <div class="chapter-tile-image">
+        {% if cover_src %}
+          <img src="{{ cover_src }}" alt="{{ chapter.name | escape }}" loading="lazy" decoding="async">
+        {% else %}
+          <div class="photo-collection-placeholder"><span>no cover</span></div>
+        {% endif %}
+      </div>
+      <div class="chapter-tile-meta">
+        <h2>{{ chapter.name }}</h2>
+        <p>
+          {{ chapter.count }} photograph{% if chapter.count != 1 %}s{% endif %}
+        </p>
+      </div>
+    </a>
+  {% endfor %}
+</div>

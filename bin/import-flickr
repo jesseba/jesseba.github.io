@@ -57,7 +57,9 @@ import photolib as lib
 API = "https://api.flickr.com/services/rest/"
 
 DISPLAY_TARGET = 2048
-THUMB_TARGET = 900
+# Grid items render 250-400px wide, so Flickr's 640px "_z" is ample and roughly
+# 40% lighter than the 800px "_c" it replaces.
+THUMB_TARGET = 650
 
 # getSizes also reports centre-cropped squares; they would corrupt aspect ratios.
 CROPPED_LABELS = {"Square", "Large Square"}
