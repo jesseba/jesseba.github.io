@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign meta = site.data.photography | where: 'slug', page.gallery | first %}
+
+<div class="post gallery-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ meta.title }}</h1>
+    <p class="post-description">
+      {% if meta.location %}{{ meta.location }}{% endif %}
+      {% if meta.location and meta.year %}&middot;{% endif %}
+      {% if meta.year %}{{ meta.year }}{% endif %}
+    </p>
+  </header>
+
+  <article>
+    {{ content }}
+    {% include photo_gallery.liquid gallery=page.gallery %}
+  </article>
+
+  <p class="gallery-nav">
+    <a href="{{ '/photography/' | relative_url }}">&larr; all collections</a>
+  </p>
+</div>

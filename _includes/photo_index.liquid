@@ -1,0 +1,61 @@
+{% comment %}
+  Cover tiles for /photography/, one per collection in _data/photography.yml order.
+
+  The cover is the manifest entry whose `file` or `id` matches the collection's
+  `cover`, falling back to the first entry, and finally to a captioned placeholder
+  when nothing has been imported yet. Local and Flickr-hosted entries resolve the
+  same way as in photo_grid.liquid.
+{% endcomment %}
+
+<div class="photo-collections">
+  {% for collection in site.data.photography %}
+    {% assign manifest = site.data.photos[collection.slug] %}
+    {% assign base = '/assets/img/photography/' | append: collection.slug | append: '/' %}
+
+    {% assign entry = null %}
+    {% if collection.cover %}
+      {% assign entry = manifest | where: 'file', collection.cover | first %}
+      {% unless entry %}
+        {% assign entry = manifest | where: 'id', collection.cover | first %}
+      {% endunless %}
+    {% endif %}
+    {% unless entry %}
+      {% assign entry = manifest | first %}
+    {% endunless %}
+
+    {% if entry.src %}
+      {% assign cover_src = entry.thumb | default: entry.src %}
+    {% elsif entry.file %}
+      {% assign cover_src = base | append: 'thumbs/' | append: entry.file | relative_url %}
+    {% else %}
+      {% assign cover_src = null %}
+    {% endif %}
+
+    <a class="photo-collection" href="{{ '/photography/' | append: collection.slug | append: '/' | relative_url }}">
+      <div class="photo-collection-image">
+        {% if cover_src %}
+          <img src="{{ cover_src }}" alt="{{ collection.title | escape }}" loading="lazy" decoding="async">
+        {% else %}
+          <div class="photo-collection-placeholder"><span>no photos imported yet</span></div>
+        {% endif %}
+      </div>
+
+      <div class="photo-collection-meta">
+        <h2>{{ collection.title }}</h2>
+        <p class="photo-collection-where">
+          {% if collection.location %}{{ collection.location }}{% endif %}
+          {% if collection.location and collection.year %}&middot;{% endif %}
+          {% if collection.year %}{{ collection.year }}{% endif %}
+        </p>
+        {% if collection.blurb %}
+          <p class="photo-collection-blurb">{{ collection.blurb }}</p>
+        {% endif %}
+        {% if manifest.size > 0 %}
+          <p class="photo-collection-count">
+            {{ manifest.size }} photograph{% if manifest.size != 1 %}s{% endif %}
+          </p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
