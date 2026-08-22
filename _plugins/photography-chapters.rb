@@ -54,7 +54,7 @@ module Jekyll
           count = counts[name].to_i
           next if count.zero?
 
-          cover = manifest.find { |photo| photo["location"] == name }
+          cover = chapter_cover(manifest, name, entry.is_a?(Hash) ? entry["cover"] : nil)
           {
             "name" => name,
             "url" => slugify(tag),
@@ -75,6 +75,17 @@ module Jekyll
     end
 
     private
+
+    # A chapter tile shows its first photograph unless the chapter names a
+    # `cover` in _data/photography.yml, matched on `file` or `id` the same way
+    # the collection-level cover is. Picking the tile should not have to mean
+    # reordering the manifest, which is what sets the order photos are shown in.
+    def chapter_cover(manifest, name, cover_ref)
+      photos = manifest.select { |photo| photo["location"] == name }
+      return photos.first if cover_ref.nil?
+
+      photos.find { |photo| photo["file"] == cover_ref || photo["id"] == cover_ref } || photos.first
+    end
 
     def slugify(value)
       value.to_s.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/\A-|-\z/, "")

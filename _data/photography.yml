@@ -92,6 +92,8 @@
       tag: toi-preparations
     - name: Alysh
       tag: alysh
+      # "get ready" — the black-and-white belt grip, not the first frame.
+      cover: "55479014396"
     - name: Er Enish
       tag: er-enish
     - name: Kyz Kuumai
