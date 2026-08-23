@@ -102,6 +102,9 @@
       tag: before-ulak-tartysh
     - name: Ulak Tartysh
       tag: ulak-tartysh
+      # "scoring" — the full reach off the saddle, and already 3:2, so the tile
+      # crops nothing away.
+      cover: "55482498842"
     - name: Milking horses for kumys
       tag: milking-horses-for-kumys
     - name: Last day with Aydar
