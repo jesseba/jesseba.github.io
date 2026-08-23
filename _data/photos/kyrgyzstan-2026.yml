@@ -100,18 +100,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55478857230"
-  src: "https://live.staticflickr.com/65535/55478857230_352398b899_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478857230_1fee1240a3_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478857230/"
-  location: "Bishkek"
-  caption: "Osh Bazaar, August"
-  w: 2048
-  h: 917
-  tw: 640
-  th: 287
-  ar: 2.2334
-
 - id: "55477473372"
   src: "https://live.staticflickr.com/65535/55477473372_59069e8257_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477473372_db1d06844e_z.jpg"
@@ -250,18 +238,6 @@
   page: "https://www.flickr.com/photos/204941863@N08/55477911599/"
   location: "Ala Archa"
   caption: "river and flowers, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
-- id: "55477735381"
-  src: "https://live.staticflickr.com/65535/55477735381_d188401d32_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477735381_a89305c932_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477735381/"
-  location: "Ala Archa"
-  caption: "bridge crossing, August"
   w: 2048
   h: 1367
   tw: 640
@@ -411,18 +387,6 @@
   tw: 492
   th: 640
   ar: 0.7688
-
-- id: "55478470954"
-  src: "https://live.staticflickr.com/65535/55478470954_9d42775390_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478470954_f9f8896352_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478470954/"
-  location: "Ala-Bel Pass"
-  caption: "wildflowers, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
 
 - id: "55478690350"
   src: "https://live.staticflickr.com/65535/55478690350_ef7872562b_k.jpg"
@@ -628,18 +592,6 @@
   th: 360
   ar: 1.7778
 
-- id: "55478472744"
-  src: "https://live.staticflickr.com/65535/55478472744_dba7c05fc9_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478472744_3fbc05be20_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478472744/"
-  location: "First Suusamyr homestay"
-  caption: "Horse portrait 1, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55478693195"
   src: "https://live.staticflickr.com/65535/55478693195_9fdc0afed2_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478693195_2ef9655e21_z.jpg"
@@ -700,18 +652,6 @@
   th: 360
   ar: 1.7778
 
-- id: "55478695355"
-  src: "https://live.staticflickr.com/65535/55478695355_d925a6b549_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478695355_ccb2dc2302_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478695355/"
-  location: "First Suusamyr homestay"
-  caption: "kitten ready for adventures, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55478421678"
   src: "https://live.staticflickr.com/65535/55478421678_41e110ecd4_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478421678_723f96c238_z.jpg"
@@ -723,6 +663,18 @@
   tw: 640
   th: 640
   ar: 1.0
+
+- id: "55478695355"
+  src: "https://live.staticflickr.com/65535/55478695355_d925a6b549_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478695355_ccb2dc2302_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478695355/"
+  location: "First Suusamyr homestay"
+  caption: "kitten ready for adventures, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
 
 - id: "55478304001"
   src: "https://live.staticflickr.com/65535/55478304001_5968cabde3_k.jpg"
@@ -934,18 +886,6 @@
   page: "https://www.flickr.com/photos/204941863@N08/55478687068/"
   location: "Toi Preparations"
   caption: "gallop, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
-- id: "55478744969"
-  src: "https://live.staticflickr.com/65535/55478744969_fc98be3acc_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478744969_b512b4cb83_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478744969/"
-  location: "Toi Preparations"
-  caption: "ulak players, August"
   w: 2048
   h: 1367
   tw: 640
@@ -1192,36 +1132,12 @@
   th: 320
   ar: 2.0
 
-- id: "55479405580"
-  src: "https://live.staticflickr.com/65535/55479405580_830b4fb69b_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55479405580_e22acc0de6_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55479405580/"
-  location: "Alysh"
-  caption: "happiness, August"
-  w: 2048
-  h: 1463
-  tw: 640
-  th: 457
-  ar: 1.3999
-
 - id: "55479014276"
   src: "https://live.staticflickr.com/65535/55479014276_6fd4f72bd5_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55479014276_f77c9c9151_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55479014276/"
   location: "Alysh"
   caption: "more fun, August"
-  w: 2048
-  h: 1463
-  tw: 640
-  th: 457
-  ar: 1.3999
-
-- id: "55479188714"
-  src: "https://live.staticflickr.com/65535/55479188714_b2b033d2ce_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55479188714_f0bb9423f7_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55479188714/"
-  location: "Alysh"
-  caption: "giggles, August"
   w: 2048
   h: 1463
   tw: 640
@@ -1264,18 +1180,6 @@
   th: 512
   ar: 1.2495
 
-- id: "55479404715"
-  src: "https://live.staticflickr.com/65535/55479404715_c99b1602ee_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55479404715_1ea001913c_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55479404715/"
-  location: "Er Enish"
-  caption: "wrestling on horses, August"
-  w: 2048
-  h: 1536
-  tw: 640
-  th: 480
-  ar: 1.3333
-
 - id: "55479128548"
   src: "https://live.staticflickr.com/65535/55479128548_3592df8026_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55479128548_c39324906e_z.jpg"
@@ -1287,6 +1191,18 @@
   tw: 640
   th: 360
   ar: 1.7778
+
+- id: "55479404715"
+  src: "https://live.staticflickr.com/65535/55479404715_c99b1602ee_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479404715_1ea001913c_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479404715/"
+  location: "Er Enish"
+  caption: "wrestling on horses, August"
+  w: 2048
+  h: 1536
+  tw: 640
+  th: 480
+  ar: 1.3333
 
 - id: "55479187819"
   src: "https://live.staticflickr.com/65535/55479187819_5f122ebbfd_k.jpg"
@@ -1300,18 +1216,6 @@
   th: 360
   ar: 1.7778
 
-- id: "55479404975"
-  src: "https://live.staticflickr.com/65535/55479404975_d4874af6d9_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55479404975_7b80f79f47_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55479404975/"
-  location: "Er Enish"
-  caption: "also called Oodarysh, August"
-  w: 2048
-  h: 1536
-  tw: 640
-  th: 480
-  ar: 1.3333
-
 - id: "55479128778"
   src: "https://live.staticflickr.com/65535/55479128778_5a1d0cb816_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55479128778_af46bb2606_z.jpg"
@@ -1323,6 +1227,18 @@
   tw: 640
   th: 457
   ar: 1.3999
+
+- id: "55479404975"
+  src: "https://live.staticflickr.com/65535/55479404975_d4874af6d9_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479404975_7b80f79f47_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479404975/"
+  location: "Er Enish"
+  caption: "also called Oodarysh, August"
+  w: 2048
+  h: 1536
+  tw: 640
+  th: 480
+  ar: 1.3333
 
 - id: "55478021082"
   src: "https://live.staticflickr.com/65535/55478021082_70e830173e_k.jpg"
@@ -1696,18 +1612,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55483663709"
-  src: "https://live.staticflickr.com/65535/55483663709_71df741c2f_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55483663709_f5ec3acc7e_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55483663709/"
-  location: "Ulak Tartysh"
-  caption: "cavalry, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
-
 - id: "55483484916"
   src: "https://live.staticflickr.com/65535/55483484916_5d292dd1f0_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55483484916_f0bbccf7ce_z.jpg"
@@ -1755,18 +1659,6 @@
   tw: 640
   th: 427
   ar: 1.5004
-
-- id: "55482565652"
-  src: "https://live.staticflickr.com/65535/55482565652_3cb1ef03aa_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55482565652_c1f30aed85_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55482565652/"
-  location: "Ulak Tartysh"
-  caption: "the chase, August"
-  w: 2048
-  h: 526
-  tw: 640
-  th: 164
-  ar: 3.8935
 
 - id: "55478418793"
   src: "https://live.staticflickr.com/65535/55478418793_8de6b436c4_k.jpg"
