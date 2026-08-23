@@ -19,8 +19,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node.js ⚙️
         uses: actions/setup-node@v4
+      # Installs exactly what package-lock.json pins, so the version that
+      # formats a file here is the version that formats it on a laptop. The
+      # bare `npm install prettier @shopify/prettier-plugin-liquid` this
+      # replaced always took the latest plugin, and 1.11.0 indents one line of
+      # _layouts/bib.liquid differently from the pinned 1.10.3 — enough to fail
+      # the check on every push while `npx prettier . --check` passed locally.
       - name: Install Prettier 💾
-        run: npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
+        run: npm ci
       - name: Prettier Check 🔎
         id: prettier
         run: npx prettier . --check
