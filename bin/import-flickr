@@ -11,7 +11,7 @@ terms require.
 Three modes:
 
   Album (needs FLICKR_API_KEY)
-    bin/import-flickr big-five-2021 --album 72177720312345678 --user jesseba
+    bin/import-flickr big-five-2021 --album 72177720312345678 --user richlyn.jesseba
 
     Chapters come from each photo's Flickr tags, matched against the chapters
     for the collection in _data/photography.yml. Only photos that are actually
@@ -19,7 +19,7 @@ Three modes:
     --location.
 
   Tags (needs FLICKR_API_KEY)
-    bin/import-flickr kyrgyzstan-2026 --tags --user jesseba
+    bin/import-flickr kyrgyzstan-2026 --tags --user richlyn.jesseba
 
     Pulls everything in the photostream tagged with any of the collection's
     chapter tags. Album membership on Flickr is a separate step from uploading
