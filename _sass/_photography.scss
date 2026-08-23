@@ -168,6 +168,11 @@ $photo-row-height: 15rem;
   }
 }
 
+/* Spans the full width of .gallery-page rather than the 50rem prose measure.
+ * The rule and the two links are chrome for the grid, not prose: capped at
+ * 50rem they stopped two-thirds of the way across a 1500px page, leaving the
+ * border-top short of the photographs it divides and stranding "next" in the
+ * middle of the page instead of under the grid's right edge. */
 .chapter-nav {
   display: flex;
   justify-content: space-between;
@@ -176,7 +181,6 @@ $photo-row-height: 15rem;
   padding-top: 1rem;
   border-top: 1px solid var(--global-divider-color);
   font-size: 0.9rem;
-  max-width: 50rem;
 }
 
 /* -----------------------------------------------------------------------------
