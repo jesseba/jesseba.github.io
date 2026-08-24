@@ -69,8 +69,8 @@
   #
   # Order is also PRECEDENCE: matching stops at the first chapter whose tag is on
   # the photo, so give each photo exactly one chapter tag. Chapters covering the
-  # same place or event (the four Korumdu ones, Alysh vs Er Enish) are the easy
-  # ones to double-tag by accident.
+  # same place or event (the four Korumdu ones, Alysh vs Er Enish, the first
+  # homestay vs the second) are the easy ones to double-tag by accident.
   locations:
     - name: Bishkek
       tag: bishkek
@@ -109,8 +109,8 @@
       tag: milking-horses-for-kumys
     - name: Last day with Aydar
       tag: last-day-with-aydar
-    - name: Suusamyr Jailoo
-      tag: suusamyr-jailoo
+    - name: Second Suusamyr homestay
+      tag: second-suusamyr-homestay
     - name: Bees
       tag: bees
     - name: Suusamyr to Korumdu
