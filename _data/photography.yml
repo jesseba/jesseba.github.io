@@ -145,8 +145,12 @@
       tag: korumdu-to-bokonbayevo
     - name: Eagle Hunter
       tag: eagle-hunter
+      # "talons" — the grip itself, not the bird entire. Already 3:2.
+      cover: "55483972542"
     - name: Issyk-Kul
       tag: issyk-kul
+      # "Issyk-kul is cool". Already 3:2.
+      cover: "55485387445"
     - name: Skazka Canyon
       tag: skazka-canyon
     - name: Karakol
