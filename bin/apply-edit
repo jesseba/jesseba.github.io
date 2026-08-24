@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Re-impose the photographic edit on the manifests after a re-import.
+
+A whole-collection import rebuilds _data/photos/<slug>.yml from Flickr and so
+invites back every frame the edit had cut. This drops them again, restores the
+two chapter overrides, and repairs the captions recorded in bin/photo_edit.py.
+
+    bin/import-flickr kyrgyzstan-2026 --tags --user <you>
+    bin/apply-edit                        # re-cut every collection
+    bin/apply-edit kyrgyzstan-2026        # just one
+    bin/apply-edit --dry-run              # say what would change
+
+Safe to run twice — the second run is a no-op. Frames the edit has never heard
+of are left alone, so a newly uploaded leg survives untouched and shows up in
+the summary as held for review. Nothing here touches Flickr: the photographs go
+on existing there whether or not the site shows them.
+"""
+
+import argparse
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import photo_edit as edit
+import photolib as lib
+
+
+def apply_to(slug, entries):
+    """Return (kept entries, list of human-readable changes)."""
+    cut = set(edit.CUT.get(slug, ()))
+    chapters = edit.CHAPTERS.get(slug, {})
+    captions = edit.CAPTIONS.get(slug, {})
+    changes, kept = [], []
+
+    for entry in entries:
+        key = lib.entry_key(entry)
+        if key in cut:
+            changes.append("cut      %s  %s" % (key, entry.get("caption") or "(uncaptioned)"))
+            continue
+
+        chapter = chapters.get(key)
+        if chapter and entry.get("location") != chapter:
+            changes.append("chapter  %s  %s -> %s" % (key, entry.get("location"), chapter))
+            entry["location"] = chapter
+
+        fix = captions.get(key)
+        if fix:
+            was, now = fix
+            current = entry.get("caption", "")
+            if current == was:
+                changes.append("caption  %s  %r -> %r" % (key, current, now))
+                entry["caption"] = now
+            elif current != now:
+                # Rewritten by hand since the fix was recorded; leave it be.
+                changes.append("skipped  %s  caption is now %r, not %r" % (key, current, was))
+
+        kept.append(entry)
+
+    # Keep page order aligned with _data/photography.yml, the way the importers
+    # leave it. The sort is stable, so order within a chapter is untouched.
+    order = {c["name"]: i for i, c in enumerate(lib.chapters(slug))}
+    kept.sort(key=lambda e: order.get(e.get("location", ""), len(order)))
+    return kept, changes
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Re-impose the photo edit after a re-import.")
+    parser.add_argument("slugs", nargs="*", help="collections to edit (default: all)")
+    parser.add_argument("--dry-run", action="store_true", help="report without writing")
+    args = parser.parse_args()
+
+    known = lib.collection_slugs()
+    slugs = args.slugs or known
+    unknown = [s for s in slugs if s not in known]
+    if unknown:
+        sys.exit("error: unknown collection(s): %s" % ", ".join(unknown))
+
+    total = 0
+    for slug in slugs:
+        path = os.path.join(lib.DATA_DIR, "%s.yml" % slug)
+        entries = lib.read_manifest(path)
+        if not entries:
+            print("%s: no manifest yet" % slug)
+            continue
+
+        kept, changes = apply_to(slug, entries)
+        cut = set(edit.CUT.get(slug, ()))
+        reviewed = cut | set(edit.KEPT.get(slug, ()))
+        unseen = [e for e in kept if lib.entry_key(e) not in reviewed]
+        gone = [i for i in edit.KEPT.get(slug, ()) if i not in {lib.entry_key(e) for e in entries}]
+
+        print(
+            "%s: %d in manifest -> %d on the site (%d cut, %d cut already absent)"
+            % (slug, len(entries), len(kept), len(entries) - len(kept), len(cut) - (len(entries) - len(kept)))
+        )
+        for line in changes:
+            print("  %s" % line)
+
+        if not changes:
+            print("  already applied")
+        elif args.dry_run:
+            print("  dry run — nothing written")
+        else:
+            lib.write_manifest(path, kept, slug)
+            print("  wrote _data/photos/%s.yml" % slug)
+        total += len([c for c in changes if not c.startswith("skipped")])
+
+        for entry in unseen:
+            print(
+                "  new      %s  %s  (%s) — held for review"
+                % (lib.entry_key(entry), entry.get("caption") or "(uncaptioned)", entry.get("location"))
+            )
+        for photo_id in gone:
+            print("  missing  %s  in KEPT but not in the manifest" % photo_id)
+
+    if total and args.dry_run:
+        print("\nRe-run without --dry-run to apply.")
+
+
+if __name__ == "__main__":
+    main()
