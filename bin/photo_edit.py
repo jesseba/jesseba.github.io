@@ -206,82 +206,12 @@ KEPT = {
 
 # Frames kept off the site, in the order they used to appear.
 #
-# Kyrgyzstan was emptied on 2026-08-24 — that collection now shows every
-# photograph Flickr has. Utah keeps its edit: the two collections are at
-# different stages, and there is no reason a decision about one should carry to
-# the other. The 146 Kyrgyzstan ids are recoverable from git history if that
-# edit is ever wanted back.
+# Both collections are empty as of 2026-08-24: the site shows every photograph
+# Flickr has, 306 of them. The mechanism stays because it is the only thing
+# between a re-import and a future edit — put an id back here and bin/apply-edit
+# drops that frame again. The edits this used to hold (146 Kyrgyzstan, 64 Utah)
+# are recoverable from git history at d2fd227.
 CUT = {
     "kyrgyzstan-2026": [],
-    "utah-arizona-2021": [
-        # Zion National Park
-        "55477818054",  # Zion National Park, April
-        "55477642171",  # At Zion National Park, April
-        "55478034465",  # At Zion National Park, April
-        "55477642201",  # GG at Zion National Park, April
-        "55477642006",  # Benthic Cyanobacteria at Zion National Park, April
-        "55477641731",  # GG at Zion National Park, April
-        "55477758388",  # Zion National Park, April
-        "55477817124",  # Abandoned Town, April
-        "55476648617",  # Angel's Landing, April
-        "55477816309",  # Angel's Landing, April
-        "55477756713",  # Vultures at Angel's Landing, April
-        "55477640461",  # Angel's Landing, April
-        "55478032785",  # Angel's Landing, April
-        "55478032600",  # Angel's Landing, April
-        # Bryce Canyon National Park
-        "55478036310",  # Bryce Canyon National Park, April
-        "55477643981",  # Bryce Point, April
-        "55476651322",  # Bryce Canyon National Park, April
-        "55476651252",  # Fairyland Point, April
-        "55477643681",  # Bryce Canyon National Park, April
-        "55478035495",  # Swamp Canyon, April
-        "55477643191",  # Bryce Canyon National Park, April
-        "55478035440",  # Swamp Canyon, April
-        "55477818709",  # Bryce Canyon National Park, April
-        "55476650182",  # Bryce Canyon National Park, April
-        "55476650247",  # Bryce Canyon National Park, April
-        "55477759328",  # Sunrise Point at Bryce Canyon National Park, April
-        # Grand Staircase-Escalante National Monument
-        "55477824319",  # Wiregrass Canyon, April
-        "55477824254",  # Wiregrass Canyon, April
-        "55477648461",  # Wahweap Hoodoos, April
-        "55477648411",  # Old Paria Mesa, April
-        "55477823909",  # Old Paria Mesa, April
-        "55477647986",  # Toadstool Hoodoos, April
-        "55477765008",  # Toadstool Hoodoos, April
-        "55478040105",  # Toadstool Hoodoos, April
-        "55477823119",  # Toadstool Hoodoos, April
-        "55476655247",  # Nautilus Rock Formation, April
-        "55477647471",  # Toadstool Hoodoos, April
-        "55477764188",  # Toadstool Hoodoos, April
-        "55477822669",  # Toadstool Hoodoos, April
-        # Vermilion Cliffs National Monument
-        "55477198311",  # Coyote Buttes North, April
-        "55478039260",  # Buckskin Gulch, April
-        "55477822184",  # Buckskin Gulch, April
-        "55477763578",  # Buckskin Gulch, April
-        "55478038810",  # Buckskin Gulch, April
-        "55477763423",  # Coyote Buttes, April
-        "55478038370",  # Coyote Buttes, April
-        "55478038300",  # Coyote Buttes South, April
-        "55478038230",  # Coyote Buttes South, April
-        "55478037835",  # Coyote Buttes South, April
-        "55477645546",  # Coyote Buttes South, April
-        "55476653397",  # Coyote Buttes North, April
-        "55477762398",  # Coyote Buttes North, April
-        "55478037290",  # Coyote Buttes North, April
-        "55477761903",  # Coyote Buttes North, April
-        "55477761778",  # Coyote Buttes South, April
-        "55476652302",  # Coyote Buttes North, April
-        "55477761268",  # Coyote Buttes North, April
-        "55477761098",  # Vermilion Cliffs National Monument, April
-        # Cane Beds
-        "55476657432",  # Cane Beds, April
-        "55477825109",  # Cane Beds, April
-        "55477824749",  # Cane Beds, April
-        "55476656982",  # Cane Beds, April
-        "55478041005",  # Cane Beds, April
-        "55477649181",  # Cane Beds, April
-    ],
+    "utah-arizona-2021": [],
 }
