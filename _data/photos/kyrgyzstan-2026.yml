@@ -4,18 +4,6 @@
 # Keep them short: place and subject, no exposure data.
 # Order within this file is the order they appear on the page.
 
-- id: "55478582428"
-  src: "https://live.staticflickr.com/65535/55478582428_fc5995f61a_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478582428_4686949585_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478582428/"
-  location: "Bishkek"
-  caption: "accordianist, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
-
 - id: "55478464691"
   src: "https://live.staticflickr.com/65535/55478464691_826c7b0ccd_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478464691_b15479ddbe_z.jpg"
@@ -111,6 +99,18 @@
   tw: 640
   th: 427
   ar: 1.4982
+
+- id: "55478582428"
+  src: "https://live.staticflickr.com/65535/55478582428_877fb3434e_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55478582428_da5182b8f3_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55478582428/"
+  location: "Bishkek"
+  caption: "accordianist, August"
+  w: 2048
+  h: 2011
+  tw: 640
+  th: 628
+  ar: 1.0184
 
 - id: "55477851743"
   src: "https://live.staticflickr.com/65535/55477851743_0479736ab8_k.jpg"
@@ -2000,7 +2000,7 @@
   src: "https://live.staticflickr.com/65535/55484185539_3fa4427c2b_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484185539_ab6d9511a3_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484185539/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "rest, August"
   w: 2048
   h: 1365
@@ -2012,7 +2012,7 @@
   src: "https://live.staticflickr.com/65535/55484403130_f88d2e1083_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484403130_8f8af41e08_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484403130/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "ridgeline climb, August"
   w: 2048
   h: 1365
@@ -2024,7 +2024,7 @@
   src: "https://live.staticflickr.com/65535/55484131218_7cbcf32739_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484131218_19eaf1f903_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484131218/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "ridgeline climb, August23"
   w: 2048
   h: 1367
@@ -2036,7 +2036,7 @@
   src: "https://live.staticflickr.com/65535/55483023942_9d91f7c97c_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55483023942_a915325e66_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55483023942/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "ridgeline climb, August"
   w: 2048
   h: 1367
@@ -2048,7 +2048,7 @@
   src: "https://live.staticflickr.com/65535/55484131343_1d042e022f_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484131343_3bee797056_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484131343/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "earthquake rockslide, August"
   w: 2048
   h: 1367
@@ -2060,7 +2060,7 @@
   src: "https://live.staticflickr.com/65535/55484010801_4bd7b2ad8c_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484010801_2c195cd74e_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484010801/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "earthquake rockslide, August"
   w: 2048
   h: 1365
@@ -2072,7 +2072,7 @@
   src: "https://live.staticflickr.com/65535/55484403960_3f76a74671_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484403960_b80bb19d72_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484403960/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "a valley traversed, August"
   w: 2048
   h: 1367
@@ -2084,7 +2084,7 @@
   src: "https://live.staticflickr.com/65535/55484011241_005682878c_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484011241_3d38f0a4b7_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484011241/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "alpine lake, August"
   w: 2048
   h: 1367
@@ -2096,7 +2096,7 @@
   src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484404015/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "12000 feet elevation, August"
   w: 2048
   h: 1365
@@ -2108,7 +2108,7 @@
   src: "https://live.staticflickr.com/65535/55484131933_4fb2009e63_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484131933_4c7d40700c_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484131933/"
-  location: "After the Earthquake"
+  location: "Earthquake during hike"
   caption: "alpine lake, August"
   w: 2048
   h: 1367

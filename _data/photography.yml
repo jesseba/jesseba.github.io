@@ -131,8 +131,10 @@
       tag: kojomkul
     - name: Korumdu of Naryn Region
       tag: korumdu
-    - name: After the Earthquake
+    - name: Earthquake during hike
       tag: korumdu-earthquake
+      # The close frame: dust pouring off the face, not the wide valley view.
+      cover: "55484131343"
     - name: Milky Way
       tag: milky-way
     - name: Down Korumdu Mountain
