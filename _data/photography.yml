@@ -78,8 +78,13 @@
       tag: to-ala-archa
     - name: Ala Archa
       tag: ala-archa
+      # "Ala Archa peaks" — the range itself, and already 3:2.
+      cover: "55478127490"
     - name: Ala Archa to Suusamyr
       tag: ala-archa-to-suusamyr
+      # "parking lot of Globus". At 2.65:1 the tile's 3:2 crop takes the
+      # hillside and the truck and loses most of the parked row on the left.
+      cover: "55477165802"
     - name: Ala-Bel Pass
       tag: ala-bel-pass
     - name: Suusamyr landscapes
@@ -96,8 +101,13 @@
       cover: "55479014396"
     - name: Er Enish
       tag: er-enish
+      # "wrestling on horses" — the black-and-white grapple. 4:3, so the tile
+      # trims a little off the top and bottom; every wrestler survives it.
+      cover: "55479404715"
     - name: Kyz Kuumai
       tag: kyz-kuumai
+      # The girl level with the boy in camouflage, whip up. Already 3:2.
+      cover: "55479253119"
     - name: Before Ulak Tartysh
       tag: before-ulak-tartysh
     - name: Ulak Tartysh
@@ -107,6 +117,8 @@
       cover: "55482498842"
     - name: Milking horses for kumys
       tag: milking-horses-for-kumys
+      # The close shot of the milk going into the pail. Already 3:2.
+      cover: "55478420843"
     - name: Last day with Aydar
       tag: last-day-with-aydar
     - name: Second Suusamyr homestay
