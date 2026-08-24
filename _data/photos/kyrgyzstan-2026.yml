@@ -2080,18 +2080,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55484011241"
-  src: "https://live.staticflickr.com/65535/55484011241_005682878c_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55484011241_3d38f0a4b7_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55484011241/"
-  location: "Earthquake during hike"
-  caption: "alpine lake, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55484404015"
   src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
@@ -2104,12 +2092,108 @@
   th: 427
   ar: 1.5004
 
+- id: "55484011241"
+  src: "https://live.staticflickr.com/65535/55484011241_005682878c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484011241_3d38f0a4b7_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484011241/"
+  location: "Earthquake during hike"
+  caption: "alpine lake, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
 - id: "55484131933"
   src: "https://live.staticflickr.com/65535/55484131933_4fb2009e63_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484131933_4c7d40700c_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484131933/"
   location: "Earthquake during hike"
   caption: "alpine lake, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55483848512"
+  src: "https://live.staticflickr.com/65535/55483848512_dfa71379e5_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483848512_a08e4f429f_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483848512/"
+  location: "Milky Way"
+  caption: "cloudy milky way, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485228520"
+  src: "https://live.staticflickr.com/65535/55485228520_992257877b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485228520_fd3852c56e_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485228520/"
+  location: "Milky Way"
+  caption: "glimpse of Perseid meteor shower, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55484838386"
+  src: "https://live.staticflickr.com/65535/55484838386_088446aa52_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484838386_b9188b7344_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484838386/"
+  location: "Milky Way"
+  caption: "home under stars, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484838446"
+  src: "https://live.staticflickr.com/65535/55484838446_737c31255d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484838446_8dc4b91138_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484838446/"
+  location: "Milky Way"
+  caption: "towering, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55483849552"
+  src: "https://live.staticflickr.com/65535/55483849552_535ab56441_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483849552_8e9d42db5c_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483849552/"
+  location: "Milky Way"
+  caption: "Korumdu of Naryn region, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484956018"
+  src: "https://live.staticflickr.com/65535/55484956018_d64240a75b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484956018_01c99ec4ae_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484956018/"
+  location: "Milky Way"
+  caption: "milky way in Korumdu, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55484838981"
+  src: "https://live.staticflickr.com/65535/55484838981_6b132c6266_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484838981_1d04178649_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484838981/"
+  location: "Milky Way"
+  caption: "stardust, August"
   w: 2048
   h: 1367
   tw: 640
