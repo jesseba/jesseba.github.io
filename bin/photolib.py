@@ -124,12 +124,17 @@ def merge(existing, fresh, location):
 
 
 def chapters(slug):
-    """Return a collection's chapters as [{"name", "tag"}, ...] in config order.
+    """Return a collection's chapters as [{"name", "tag", "tags"}, ...] in order.
 
     Entries in _data/photography.yml may be either a bare string (tag derived
     from the name) or a mapping with `name` and an optional `tag`. An explicit
     tag decouples the heading from what is tagged on Flickr, so renaming a
     chapter does not orphan photos already tagged.
+
+    A chapter may instead carry `tags: [a, b, c]` and gather several Flickr tags
+    under one heading — how "On the Road" collects the separate driving legs.
+    `tags` is always present and is what callers should match against; `tag`
+    stays the first of them so older single-tag callers keep working.
     """
     if not os.path.exists(COLLECTIONS):
         return None
@@ -172,7 +177,15 @@ def chapters(slug):
     if found is None:
         return None
     for chapter in found:
-        chapter.setdefault("tag", chapter["name"])
+        # `tags: [a, b, c]` arrives from the parser as the literal bracketed
+        # string, since this reader is deliberately not a YAML engine.
+        listed = chapter.pop("tags", None)
+        extra = []
+        if listed is not None:
+            extra = [unquote(t) for t in listed.strip("[]").split(",") if t.strip()]
+        single = chapter.get("tag")
+        chapter["tags"] = ([single] if single else []) + extra or [chapter["name"]]
+        chapter["tag"] = chapter["tags"][0]
     return found
 
 

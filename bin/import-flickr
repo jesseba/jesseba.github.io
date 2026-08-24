@@ -169,13 +169,14 @@ def location_for(tags, chapters, override, default):
     """Return the display name of the first chapter whose tag is on the photo.
 
     Chapters are checked in config order, so order is precedence. Both sides are
-    normalised, letting tags be typed hyphenated or spaced on Flickr.
+    normalised, letting tags be typed hyphenated or spaced on Flickr. A chapter
+    carrying several tags matches on any one of them.
     """
     if override is not None:
         return override
     tokens = {lib.normalize_tag(t) for t in (tags or "").split()}
     for chapter in chapters or []:
-        if lib.normalize_tag(chapter["tag"]) in tokens:
+        if any(lib.normalize_tag(t) in tokens for t in chapter["tags"]):
             return chapter["name"]
     return default
 
@@ -319,7 +320,7 @@ def from_tags(args, api_key, chapters):
     entirely. Within a chapter, photos are ordered by capture time.
     """
     nsid = resolve_user(api_key, args.user)
-    all_tags = [c["tag"] for c in chapters or []]
+    all_tags = [t for c in chapters or [] for t in c["tags"]]
     if not all_tags:
         fail("collection %r has no chapters to match tags against" % args.slug)
 
