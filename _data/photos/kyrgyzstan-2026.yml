@@ -2080,18 +2080,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55484404015"
-  src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55484404015/"
-  location: "Earthquake during hike"
-  caption: "12000 feet elevation, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
-
 - id: "55484011241"
   src: "https://live.staticflickr.com/65535/55484011241_005682878c_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484011241_3d38f0a4b7_z.jpg"
@@ -2103,6 +2091,18 @@
   tw: 640
   th: 427
   ar: 1.4982
+
+- id: "55484404015"
+  src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484404015/"
+  location: "Earthquake during hike"
+  caption: "12000 feet elevation, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
 
 - id: "55484131933"
   src: "https://live.staticflickr.com/65535/55484131933_4fb2009e63_k.jpg"
@@ -2176,18 +2176,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55484956018"
-  src: "https://live.staticflickr.com/65535/55484956018_d64240a75b_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55484956018_01c99ec4ae_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55484956018/"
-  location: "Milky Way"
-  caption: "milky way in Korumdu, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
-
 - id: "55484838981"
   src: "https://live.staticflickr.com/65535/55484838981_6b132c6266_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484838981_1d04178649_z.jpg"
@@ -2199,6 +2187,18 @@
   tw: 640
   th: 427
   ar: 1.4982
+
+- id: "55484956018"
+  src: "https://live.staticflickr.com/65535/55484956018_d64240a75b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484956018_01c99ec4ae_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484956018/"
+  location: "Milky Way"
+  caption: "milky way in Korumdu, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
 
 - id: "55484402800"
   src: "https://live.staticflickr.com/65535/55484402800_d60a639b5f_k.jpg"
@@ -2235,3 +2235,495 @@
   tw: 640
   th: 512
   ar: 1.2503
+
+- id: "55485075773"
+  src: "https://live.staticflickr.com/65535/55485075773_5e22ed106b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485075773_cebe7f18af_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485075773/"
+  location: "Korumdu to Bokonbayevo"
+  caption: "petroglyphs, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55484958716"
+  src: "https://live.staticflickr.com/65535/55484958716_f6a2fa369f_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484958716_8f409b000a_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484958716/"
+  location: "Korumdu to Bokonbayevo"
+  caption: "landscapes en route, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485075978"
+  src: "https://live.staticflickr.com/65535/55485075978_52411e3400_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485075978_fe463466ea_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485075978/"
+  location: "Korumdu to Bokonbayevo"
+  caption: "landscapes en route, August"
+  w: 2048
+  h: 1152
+  tw: 640
+  th: 360
+  ar: 1.7778
+
+- id: "55485076103"
+  src: "https://live.staticflickr.com/65535/55485076103_af48d75779_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485076103_6bb178140b_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485076103/"
+  location: "Korumdu to Bokonbayevo"
+  caption: "landscapes en route, AugustC_3478"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485077943"
+  src: "https://live.staticflickr.com/65535/55485077943_9fd38eee27_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485077943_a4db6d6766_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485077943/"
+  location: "Eagle Hunter"
+  caption: "Bokonbayevo, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485078093"
+  src: "https://live.staticflickr.com/65535/55485078093_015810a05a_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485078093_67af6ab7e2_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485078093/"
+  location: "Eagle Hunter"
+  caption: "treat, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484960981"
+  src: "https://live.staticflickr.com/65535/55484960981_8f5778d4c3_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484960981_756ba799ed_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484960981/"
+  location: "Eagle Hunter"
+  caption: "Eagle profile, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55483972082"
+  src: "https://live.staticflickr.com/65535/55483972082_d44615a7e6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483972082_7e81db2b93_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483972082/"
+  location: "Eagle Hunter"
+  caption: "hunting, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55483972187"
+  src: "https://live.staticflickr.com/65535/55483972187_4345a30dee_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483972187_2934b7fcb8_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483972187/"
+  location: "Eagle Hunter"
+  caption: "eagle hunter and eagle, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485351610"
+  src: "https://live.staticflickr.com/65535/55485351610_bc56151293_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485351610_5d955a2d0c_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485351610/"
+  location: "Eagle Hunter"
+  caption: "pets, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485351660"
+  src: "https://live.staticflickr.com/65535/55485351660_08e8f0eb7c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485351660_e2fec0a8d9_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485351660/"
+  location: "Eagle Hunter"
+  caption: "eagle hunter and eagle, August"
+  w: 2048
+  h: 1366
+  tw: 640
+  th: 427
+  ar: 1.4993
+
+- id: "55485351650"
+  src: "https://live.staticflickr.com/65535/55485351650_512e92517d_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485351650_a9af19f3b0_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485351650/"
+  location: "Eagle Hunter"
+  caption: "eagle hunter and eagle, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485078453"
+  src: "https://live.staticflickr.com/65535/55485078453_b9867833d6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485078453_d021176055_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485078453/"
+  location: "Eagle Hunter"
+  caption: "hunting, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485351950"
+  src: "https://live.staticflickr.com/65535/55485351950_7cab9d9319_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485351950_bb2f54ee70_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485351950/"
+  location: "Eagle Hunter"
+  caption: "wingspan, August"
+  w: 2048
+  h: 1536
+  tw: 640
+  th: 480
+  ar: 1.3333
+
+- id: "55483972542"
+  src: "https://live.staticflickr.com/65535/55483972542_f3c13dfd2b_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483972542_ac55028ae6_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483972542/"
+  location: "Eagle Hunter"
+  caption: "talons, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485171314"
+  src: "https://live.staticflickr.com/65535/55485171314_ad3df9baae_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485171314_1d1fc8fccf_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485171314/"
+  location: "Issyk-Kul"
+  caption: "Buddha on mountain, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485171819"
+  src: "https://live.staticflickr.com/65535/55485171819_167c9a4bd8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485171819_b61264dd92_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485171819/"
+  location: "Issyk-Kul"
+  caption: "post-beach day, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484995401"
+  src: "https://live.staticflickr.com/65535/55484995401_9d7318d450_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484995401_b19894b4df_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484995401/"
+  location: "Issyk-Kul"
+  caption: "traffic jam, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485387445"
+  src: "https://live.staticflickr.com/65535/55485387445_9d604d3820_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485387445_867ccab2ef_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485387445/"
+  location: "Issyk-Kul"
+  caption: "Issyk-kul is cool, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484007752"
+  src: "https://live.staticflickr.com/65535/55484007752_d66c169f0e_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484007752_8a359183b6_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484007752/"
+  location: "Issyk-Kul"
+  caption: "end route to Karakol, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484007727"
+  src: "https://live.staticflickr.com/65535/55484007727_8ebec53a17_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484007727_4cfdb2e17d_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484007727/"
+  location: "Skazka Canyon"
+  caption: "Fairtytale canyon, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484007792"
+  src: "https://live.staticflickr.com/65535/55484007792_e06308bb05_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484007792_483b842c92_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484007792/"
+  location: "Skazka Canyon"
+  caption: "Skazka, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485387750"
+  src: "https://live.staticflickr.com/65535/55485387750_fee223d425_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485387750_1f42a99cee_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485387750/"
+  location: "Skazka Canyon"
+  caption: "Issyk-kul in the distance, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485172504"
+  src: "https://live.staticflickr.com/65535/55485172504_83f12a9136_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485172504_131bfba7ab_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485172504/"
+  location: "Skazka Canyon"
+  caption: "shades of orange, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484023227"
+  src: "https://live.staticflickr.com/65535/55484023227_8d8ef21947_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484023227_47aaec0721_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484023227/"
+  location: "Karakol"
+  caption: "chicks in Karakol, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485402920"
+  src: "https://live.staticflickr.com/65535/55485402920_94eaeb6e1c_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485402920_259668d63b_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485402920/"
+  location: "Karakol"
+  caption: "spices, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485402930"
+  src: "https://live.staticflickr.com/65535/55485402930_21deb2ecc1_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485402930_86f55fbdbe_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485402930/"
+  location: "Karakol"
+  caption: "chicks, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484023397"
+  src: "https://live.staticflickr.com/65535/55484023397_a7e7b6e758_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484023397_63e6049fda_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484023397/"
+  location: "Karakol"
+  caption: "art, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485167238"
+  src: "https://live.staticflickr.com/65535/55485167238_95a29667b4_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485167238_348af66d70_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485167238/"
+  location: "Altyn Arashan"
+  caption: "GG in the mountains, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485050201"
+  src: "https://live.staticflickr.com/65535/55485050201_817449af72_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485050201_61f8fde7d7_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485050201/"
+  location: "Altyn Arashan"
+  caption: "camping, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485441955"
+  src: "https://live.staticflickr.com/65535/55485441955_bbc8c94c6e_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485441955_93f9aa9dba_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485441955/"
+  location: "Altyn Arashan"
+  caption: "horses and mountains, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55484062522"
+  src: "https://live.staticflickr.com/65535/55484062522_b3d01fbc07_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484062522_6125cdb89b_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484062522/"
+  location: "Altyn Arashan"
+  caption: "more yurts, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485167878"
+  src: "https://live.staticflickr.com/65535/55485167878_e8a53d71a5_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485167878_c07dd35ae4_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485167878/"
+  location: "Altyn Arashan"
+  caption: "short hike, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485168083"
+  src: "https://live.staticflickr.com/65535/55485168083_f7e157752e_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485168083_e0593bfb6f_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485168083/"
+  location: "Altyn Arashan"
+  caption: "dust to dust; wood to wood, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485442630"
+  src: "https://live.staticflickr.com/65535/55485442630_07ab426f84_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485442630_4772dd1068_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485442630/"
+  location: "Altyn Arashan"
+  caption: "more mounds, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55484063152"
+  src: "https://live.staticflickr.com/65535/55484063152_25560ea2cb_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484063152_5682605943_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484063152/"
+  location: "Altyn Arashan"
+  caption: "mounds, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485168478"
+  src: "https://live.staticflickr.com/65535/55485168478_11288c3502_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485168478_126778b774_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485168478/"
+  location: "Altyn Arashan"
+  caption: "babbling brook, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485442925"
+  src: "https://live.staticflickr.com/65535/55485442925_7d615bc7d8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485442925_1839aa667f_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485442925/"
+  location: "Altyn Arashan"
+  caption: "river route, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485443025"
+  src: "https://live.staticflickr.com/65535/55485443025_48c104ed51_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485443025_314bd8fc9d_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485443025/"
+  location: "Altyn Arashan"
+  caption: "home for a bit, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
+
+- id: "55485227504"
+  src: "https://live.staticflickr.com/65535/55485227504_180cc5c2b8_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485227504_8b9ab2516f_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485227504/"
+  location: "Altyn Arashan"
+  caption: "hunting for hot springs, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485051551"
+  src: "https://live.staticflickr.com/65535/55485051551_ea1f974031_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485051551_2418a1040d_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485051551/"
+  location: "Altyn Arashan"
+  caption: "UAZ up, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
