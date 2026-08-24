@@ -80,15 +80,14 @@
       tag: ala-archa
       # "Ala Archa peaks" — the range itself, and already 3:2.
       cover: "55478127490"
-    - name: Ala Archa to Suusamyr
-      tag: ala-archa-to-suusamyr
-      # "parking lot of Globus". At 2.65:1 the tile's 3:2 crop takes the
-      # hillside and the truck and loses most of the parked row on the left.
-      cover: "55477165802"
-    - name: Ala-Bel Pass
-      tag: ala-bel-pass
-    - name: Suusamyr landscapes
-      tag: suusamyr-landscapes
+    # The driving legs, gathered under one heading rather than scattered as
+    # five short chapters across the trip. It sits where the first of them fell,
+    # so the run up to Too-Ashuu still reads in place; the later legs are lifted
+    # out of their chronological slots to join it.
+    #
+    # `tags` is the multi-tag form: any one of these files a photograph here.
+    - name: On the Road
+      tags: [ala-archa-to-suusamyr, ala-bel-pass, suusamyr-landscapes, suusamyr-to-korumdu, korumdu-to-bokonbayevo]
     - name: First Suusamyr homestay
       tag: first-suusamyr-homestay
     - name: Morning rituals
@@ -125,8 +124,6 @@
       tag: second-suusamyr-homestay
     - name: Bees
       tag: bees
-    - name: Suusamyr to Korumdu
-      tag: suusamyr-to-korumdu
     - name: Kojomkul
       tag: kojomkul
     - name: Korumdu of Naryn Region
@@ -141,8 +138,6 @@
       tag: down-korumdu-mountain
     - name: Korumdu Artifacts
       tag: korumdu-artifacts
-    - name: Korumdu to Bokonbayevo
-      tag: korumdu-to-bokonbayevo
     - name: Eagle Hunter
       tag: eagle-hunter
       # "talons" — the grip itself, not the bird entire. Already 3:2.
