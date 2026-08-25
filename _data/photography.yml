@@ -13,6 +13,30 @@
 #   blurb     one line on the index tile; keep it short
 #   cover     photo id (Flickr) or filename (local) for the index tile
 #             (falls back to the first photo in the manifest)
+#   gate_tag  the tag a photograph must carry to be part of this collection at
+#             all. Tag mode searches for this instead of the chapter tags, so
+#             chapter tags only sort photographs that already belong.
+#
+#             Without it every chapter tag is live across the whole Flickr
+#             account: a short, ordinary word like `bees` or `portraits` typed on
+#             any photograph anywhere pulls it onto the site, and into that
+#             chapter. With it, every tag that is not the gate or a chapter tag
+#             is inert — free for sharing, groups, and search.
+#
+#             Removal still works the way it always has: drop a photograph's
+#             chapter tag and it leaves the site, because a photograph carrying
+#             the gate but no chapter tag is dropped rather than shown unfiled.
+#             Dropping the gate removes it too.
+#
+#             Keep it a token nobody would type as a description. `kyrgyzstan2026`
+#             would be a poor choice: tags are compared with non-alphanumerics
+#             stripped, so an ordinary sharing tag of "Kyrgyzstan 2026" would
+#             collide with it and defeat the point. Hence the `site-` prefix.
+#
+#             bin/check-tags reports whether the gate is actually applied on
+#             Flickr, and bin/import-flickr refuses to shrink a manifest by more
+#             than half without --force, so a gate that has not landed yet fails
+#             loudly instead of emptying the gallery.
 #   group_by_location
 #             true  -> gallery renders a subheading per chapter, in `locations` order
 #             false -> one continuous justified grid
@@ -42,6 +66,7 @@
   year: 2021
   blurb: What is the difference between a national park and a national monument?
   cover:
+  gate_tag: site-utah-arizona-2021
   group_by_location: true
   locations:
     - name: Zion National Park
@@ -63,6 +88,7 @@
   blurb: May our luck never run out.
   # "Survivor's Path in Ala Archa" — the camp at dusk.
   cover: "55477196516"
+  gate_tag: site-kyrgyzstan-2026
   group_by_location: true
   # Chapters in chronological order, not alphabetical or geographic — this is the
   # sequence the trip actually happened in, so the page reads as a narrative.

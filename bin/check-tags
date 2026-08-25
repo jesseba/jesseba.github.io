@@ -1,0 +1,282 @@
+#!/usr/bin/env python3
+"""Check that Flickr tags still say what the site thinks they say.
+
+Chapters are decided by tags, so tagging on Flickr is configuration for this
+site whether or not it is thought of that way. This reports where the two have
+drifted, and — for a collection that declares a `gate_tag` — whether the gate is
+actually applied, which is worth knowing before an import that would otherwise
+replace the manifest with whatever the search returned.
+
+    bin/check-tags                        # every collection
+    bin/check-tags kyrgyzstan-2026        # just one
+    bin/check-tags --all                  # list every photograph, with urls
+
+Needs FLICKR_API_KEY and a user:
+
+    export FLICKR_API_KEY=...
+    bin/check-tags --user richlyn.jesseba
+
+What it looks for:
+
+  missing gate   A photograph in the manifest that no longer carries the gate
+                 tag. The next import drops it. This is the check to run after
+                 bulk-tagging on Flickr, to confirm the tag really landed.
+
+  unfiled        Carries the gate but no chapter tag, so an import drops it.
+                 Expected right after untagging something on purpose; a surprise
+                 otherwise, and the photograph is on Flickr either way.
+
+  ambiguous      Matches more than one chapter. Order in _data/photography.yml
+                 is precedence, so this still resolves, but silently — the
+                 second chapter never sees it. Retagging is the real fix.
+
+  would leak     Carries a chapter tag but not the gate. Inert today precisely
+                 because the gate exists; without one it would be pulled onto
+                 the site. Listed so the value of the gate stays visible.
+
+  index lag      Flickr's tag search returns fewer photographs than actually
+                 carry the gate. Tagging reaches the photostream at once and the
+                 search index later, and the importer searches — so importing
+                 during the gap drops whatever has not been indexed. Wait.
+
+Exit status is 1 if anything worth acting on turned up, so CI can call it.
+"""
+
+import argparse
+import collections
+import json
+import os
+import sys
+import urllib.error
+import urllib.parse
+import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import photolib as lib
+
+API = "https://api.flickr.com/services/rest/"
+
+
+def fail(message):
+    sys.exit("error: %s" % message)
+
+
+def call(method, api_key, **params):
+    params.update(method=method, api_key=api_key, format="json", nojsoncallback=1)
+    url = API + "?" + urllib.parse.urlencode(params)
+    try:
+        with urllib.request.urlopen(url, timeout=30) as response:
+            payload = json.load(response)
+    except urllib.error.HTTPError as error:
+        fail("Flickr API returned HTTP %s for %s" % (error.code, method))
+    except urllib.error.URLError as error:
+        fail("could not reach the Flickr API: %s" % error.reason)
+    if payload.get("stat") != "ok":
+        fail("Flickr API: %s (%s)" % (payload.get("message", "unknown"), method))
+    return payload
+
+
+def resolve_user(api_key, who):
+    import re
+
+    if re.fullmatch(r"\d+@N\d+", who):
+        return who
+    if "flickr.com" in who:
+        return call("flickr.urls.lookupUser", api_key, url=who)["user"]["id"]
+    return call("flickr.people.findByUsername", api_key, username=who)["user"]["nsid"]
+
+
+def photostream(api_key, nsid):
+    """Every photograph in the account, keyed by id, with its normalised tags."""
+    photos, page = {}, 1
+    while True:
+        block = call(
+            "flickr.people.getPhotos", api_key, user_id=nsid, extras="tags", per_page=500, page=page
+        )["photos"]
+        for photo in block["photo"]:
+            photos[photo["id"]] = {lib.normalize_tag(t) for t in (photo.get("tags") or "").split()}
+        if page >= int(block.get("pages", 1)):
+            break
+        page += 1
+    return photos
+
+
+def chapters_for(slug):
+    """[(chapter name, {normalised tags})] in config order, which is precedence."""
+    return [
+        (chapter["name"], {lib.normalize_tag(t) for t in chapter["tags"]})
+        for chapter in lib.chapters(slug) or []
+    ]
+
+
+def search_count(api_key, nsid, tag):
+    """How many photos flickr.photos.search returns for a tag, right now.
+
+    Deliberately a different question from "how many carry the tag". Tagging shows
+    up in flickr.people.getPhotos immediately but reaches the search index later,
+    and the importer searches. So a bulk-tagging session can look complete here
+    while an import still comes back short and quietly drops the stragglers from
+    the manifest. Comparing the two numbers is the only warning of that.
+    """
+    return int(call("flickr.photos.search", api_key, user_id=nsid, tags=tag, tag_mode="any", per_page=1)["photos"]["total"])
+
+
+def report(slug, stream, findings, api_key=None, nsid=None, show_all=False):
+    gate = lib.gate_tag(slug)
+    gate_key = lib.normalize_tag(gate) if gate else None
+    chapters = chapters_for(slug)
+    manifest = lib.read_manifest(os.path.join(lib.DATA_DIR, "%s.yml" % slug))
+    manifest_ids = [e.get("id") for e in manifest if e.get("id")]
+
+    print("\n%s — %d in the manifest, gate tag %s" % (slug, len(manifest), repr(gate) if gate else "(none)"))
+
+    if not gate:
+        # Without a gate every chapter tag is live account-wide, so the only
+        # useful thing to say is which of them are short enough to be typed by
+        # accident, and how exposed that leaves the collection.
+        owned = {t for _, tags in chapters for t in tags}
+        loose = sorted(t for t in owned if len(t) <= 10)
+        print("  no gate: all %d chapter tag(s) are load-bearing across the account" % len(owned))
+        if loose:
+            print("  short enough to be typed by accident: %s" % ", ".join(loose))
+            findings.append("%s: no gate tag, %d short chapter tag(s) exposed" % (slug, len(loose)))
+        return
+
+    covered = [pid for pid in manifest_ids if gate_key in stream.get(pid, set())]
+    print("  gate applied to %d of %d manifest photograph(s)" % (len(covered), len(manifest_ids)))
+
+    # What the importer would actually see, which can trail what is really tagged.
+    if api_key and nsid and covered:
+        carried = sum(1 for tags in stream.values() if gate_key in tags)
+        indexed = search_count(api_key, nsid, gate)
+        if indexed < carried:
+            print(
+                "  search index lag: %d photograph(s) carry the gate but search returns %d."
+                % (carried, indexed)
+            )
+            print("  Importing now would drop the %d that have not been indexed yet." % (carried - indexed))
+            print("  Wait for Flickr to catch up and re-run this before importing.")
+            findings.append(
+                "%s: search index %d behind the %d actually tagged — do not import yet"
+                % (slug, carried - indexed, carried)
+            )
+
+    missing = [pid for pid in manifest_ids if pid in stream and gate_key not in stream[pid]]
+    absent = [pid for pid in manifest_ids if pid not in stream]
+    gated = {pid for pid, tags in stream.items() if gate_key in tags}
+
+    def chapter_of(tags):
+        return [name for name, chapter_tags in chapters if tags & chapter_tags]
+
+    unfiled = sorted(pid for pid in gated if not chapter_of(stream[pid]))
+    ambiguous = sorted(pid for pid in gated if len(chapter_of(stream[pid])) > 1)
+    leak = sorted(pid for pid, tags in stream.items() if pid not in gated and chapter_of(tags))
+
+    if not covered:
+        # The gate has not been applied at all yet, so listing every photograph
+        # says nothing that the count above has not already said. Say what to do
+        # instead. Nothing is at risk meanwhile: an import that found none of them
+        # refuses to write rather than emptying the manifest.
+        print("  the gate is not on Flickr yet — apply it before the next import:")
+        print("    Organizr -> select the published photographs -> add tag: %s" % gate)
+        print("  select them by chapter tag, not by album: an album is a separate")
+        print("  list that drifts, and tagging from one silently misses whatever it")
+        print("  never had. The gate should mark exactly what the site publishes,")
+        print("  so do not put it on photographs meant to stay off.")
+        print("  until then `bin/import-flickr %s --tags` will refuse to write." % slug)
+        findings.append("%s: gate tag %r not applied to any of %d photograph(s)" % (slug, gate, len(manifest_ids)))
+        return
+
+    page_of = {e.get("id"): e.get("page", "") for e in manifest}
+
+    def listing(label, ids, describe, urls=False):
+        cap = len(ids) if show_all else 10
+        for pid in ids[:cap]:
+            print("  %-13s %s — %s" % (label, pid, describe(pid)))
+            if urls and page_of.get(pid):
+                print("  %-13s   %s" % ("", page_of[pid]))
+        if len(ids) > cap:
+            print("  %-13s ... and %d more (--all to list them)" % ("", len(ids) - cap))
+
+    listing("missing gate", missing, lambda p: "in the manifest, next import drops it", urls=True)
+    listing("not on flickr", absent, lambda p: "in the manifest but gone from the photostream")
+    listing("unfiled", unfiled, lambda p: "gate but no chapter tag, an import drops it")
+    listing(
+        "ambiguous",
+        ambiguous,
+        lambda p: "matches %s; %r wins on precedence"
+        % (" + ".join(chapter_of(stream[p])), chapter_of(stream[p])[0]),
+    )
+    listing(
+        "would leak",
+        leak,
+        lambda p: "has %r but no gate, so it stays off the site" % chapter_of(stream[p])[0],
+    )
+
+    if missing:
+        findings.append("%s: %d manifest photo(s) missing the gate tag" % (slug, len(missing)))
+    if absent:
+        findings.append("%s: %d manifest photo(s) no longer on Flickr" % (slug, len(absent)))
+    if ambiguous:
+        findings.append("%s: %d photo(s) match more than one chapter" % (slug, len(ambiguous)))
+    if not missing and not absent and not ambiguous:
+        print("  nothing to act on%s" % (" (%d unfiled, %d inert)" % (len(unfiled), len(leak)) if unfiled or leak else ""))
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Check Flickr tags against the site's expectations.")
+    parser.add_argument("slugs", nargs="*", help="collections to check (default: all)")
+    parser.add_argument("--user", help="Flickr username, NSID, or profile url")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="list every affected photograph instead of the first ten, with its "
+        "Flickr page url — what you want when working through the ones that "
+        "still need the gate tag",
+    )
+    args = parser.parse_args()
+
+    api_key = os.environ.get("FLICKR_API_KEY", "").strip()
+    if not api_key:
+        fail("needs FLICKR_API_KEY\n"
+             "       Get one at https://www.flickr.com/services/apps/create/apply\n"
+             "       then: export FLICKR_API_KEY=...")
+
+    known = lib.collection_slugs()
+    slugs = args.slugs or known
+    unknown = [s for s in slugs if s not in known]
+    if unknown:
+        fail("unknown collection(s): %s" % ", ".join(unknown))
+
+    who = args.user or os.environ.get("FLICKR_USER", "").strip()
+    if not who:
+        fail("needs --user (your Flickr username, NSID, or profile url)")
+
+    nsid = resolve_user(api_key, who)
+    stream = photostream(api_key, nsid)
+    print("photostream: %d photograph(s) for %s" % (len(stream), nsid))
+
+    # The whole account's tag vocabulary, so it is obvious at a glance how much of
+    # it the site is reading and how much is free for sharing.
+    vocab = collections.Counter(t for tags in stream.values() for t in tags)
+    owned = {lib.normalize_tag(t) for slug in known for c in lib.chapters(slug) or [] for t in c["tags"]}
+    owned |= {lib.normalize_tag(lib.gate_tag(slug)) for slug in known if lib.gate_tag(slug)}
+    free = sorted(t for t in vocab if t not in owned)
+    print("tags in use: %d, of which %d are the site's and %d are free" % (len(vocab), len(vocab) - len(free), len(free)))
+    if free:
+        print("free tags: %s" % ", ".join("%s(%d)" % (t, vocab[t]) for t in free))
+
+    findings = []
+    for slug in slugs:
+        report(slug, stream, findings, api_key=api_key, nsid=nsid, show_all=args.all)
+
+    if findings:
+        print("\n%d thing(s) to act on:" % len(findings))
+        for line in findings:
+            print("  %s" % line)
+        sys.exit(1)
+    print("\nNothing to act on.")
+
+
+if __name__ == "__main__":
+    main()

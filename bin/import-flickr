@@ -21,9 +21,15 @@ Three modes:
   Tags (needs FLICKR_API_KEY)
     bin/import-flickr kyrgyzstan-2026 --tags --user richlyn.jesseba
 
-    Pulls everything in the photostream tagged with any of the collection's
-    chapter tags. Album membership on Flickr is a separate step from uploading
-    and tagging, so albums lag behind; this mode sidesteps that.
+    Pulls everything in the photostream that belongs to the collection. Album
+    membership on Flickr is a separate step from uploading and tagging, so albums
+    lag behind; this mode sidesteps that.
+
+    If the collection declares a `gate_tag` in _data/photography.yml, that tag
+    alone decides membership and the chapter tags only sort what it returns —
+    so any other tag is inert and can be added freely for sharing. Otherwise the
+    chapter tags themselves are searched, and every one of them is load-bearing
+    across the whole account. bin/check-tags reports on either arrangement.
 
   Urls (no API key required)
     bin/import-flickr kyrgyzstan-2026 --urls urls.txt --location ""
@@ -71,6 +77,11 @@ UNSERVABLE_LABELS = {"Original"}
 
 # flickr.photos.search caps how many tags one query may carry.
 TAG_BATCH = 18
+
+# A whole-collection import may shrink the manifest to this fraction of its
+# previous size before it wants --force. Real edits are a few frames at a time;
+# a collapse to a handful means the search, not the tagging, went wrong.
+SHRINK_FLOOR = 0.5
 
 
 def fail(message):
@@ -312,15 +323,33 @@ def from_album(args, api_key, chapters):
 
 
 def from_tags(args, api_key, chapters):
-    """Import every photo in the photostream carrying one of the chapter tags.
+    """Import every photo in the photostream that belongs to this collection.
 
     Album membership is a separate step on Flickr from uploading and tagging, so
-    an album routinely lags behind what has actually been tagged. Since chapters
-    are defined by tags anyway, searching the photostream avoids that mismatch
-    entirely. Within a chapter, photos are ordered by capture time.
+    an album routinely lags behind what has actually been tagged. Searching the
+    photostream avoids that mismatch entirely. Within a chapter, photos are
+    ordered by capture time.
+
+    What "belongs" means depends on whether the collection declares a `gate_tag`:
+
+      With a gate, the search asks for the gate tag alone and chapter tags only
+      sort what comes back. Every tag that is not the gate or a chapter tag is
+      inert, so tags can be added freely for sharing without touching the site.
+      A photograph carrying the gate but no chapter tag is dropped rather than
+      shown unfiled, which is what keeps "remove the chapter tag to remove it
+      from the site" true.
+
+      Without one, the search asks for the chapter tags themselves — the original
+      behaviour, kept so a collection that has not opted in still imports. Every
+      chapter tag is then load-bearing account-wide.
     """
     nsid = resolve_user(api_key, args.user)
-    all_tags = [t for c in chapters or [] for t in c["tags"]]
+    gate = lib.gate_tag(args.slug)
+    if gate:
+        all_tags = [gate]
+        print("Gate tag %r — chapter tags only sort what it returns." % gate)
+    else:
+        all_tags = [t for c in chapters or [] for t in c["tags"]]
     if not all_tags:
         fail("collection %r has no chapters to match tags against" % args.slug)
 
@@ -348,17 +377,29 @@ def from_tags(args, api_key, chapters):
             page += 1
 
     photos = list(found.values())
-    print("Photostream: %d photo(s) matching %d chapter tag(s)" % (len(photos), len(all_tags)))
+    print(
+        "Photostream: %d photo(s) matching %s"
+        % (len(photos), "the gate tag" if gate else "%d chapter tag(s)" % len(all_tags))
+    )
     photos.sort(key=lambda p: p.get("datetaken", ""))
 
-    entries = []
+    entries, unfiled = [], 0
     for index, photo in enumerate(photos, 1):
+        # Chapter first, so an unfiled photograph costs no getSizes call.
+        location = location_for(photo.get("tags"), chapters, args.location, "")
+        if gate and args.location is None and not location:
+            # In the collection but filed under nothing. Dropping it rather than
+            # rendering it unfiled is what makes removing a chapter tag on Flickr
+            # remove the photograph from the site.
+            unfiled += 1
+            print("  [%d/%d] %s — gate tag but no chapter tag, dropped" % (index, len(photos), photo["id"]))
+            continue
+
         sizes = call("flickr.photos.getSizes", api_key, photo_id=photo["id"])["sizes"]["size"]
         display, thumb = pick_sizes(sizes)
         if not display:
             print("  [%d/%d] %s — no usable size, skipped" % (index, len(photos), photo["id"]))
             continue
-        location = location_for(photo.get("tags"), chapters, args.location, "")
         print("  [%d/%d] %s  %dx%d  %s" % (index, len(photos), photo["id"], display["w"], display["h"], location or "-"))
         entries.append(
             {
@@ -375,6 +416,8 @@ def from_tags(args, api_key, chapters):
                 "ar": round(display["w"] / display["h"], 4),
             }
         )
+    if unfiled:
+        print("%d photo(s) carried the gate tag but no chapter tag and were dropped." % unfiled)
     return entries
 
 
@@ -467,6 +510,12 @@ def main():
         "Album mode otherwise derives it from each photo's tags.",
     )
     parser.add_argument("--dry-run", action="store_true", help="show what would be written and exit")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="allow a whole-collection import to shrink the manifest by more than "
+        "half, which is otherwise refused as a likely failed search",
+    )
     args = parser.parse_args()
 
     api_key = os.environ.get("FLICKR_API_KEY", "").strip()
@@ -523,18 +572,32 @@ def main():
     existing = lib.read_manifest(manifest_path)
     entries = lib.carry_captions(existing, entries)
 
+    # An album or tag import without --location sees the whole collection, so the
+    # manifest is replaced outright (below). That makes a short search expensive:
+    # a gate tag not yet applied on Flickr, a typo in it, or an API hiccup part way
+    # through the pages would quietly delete most of the gallery. Refuse a large
+    # cut instead, and let --force say that it is deliberate.
+    whole_collection = (args.album or args.tags) and args.location is None
+    if whole_collection and existing and len(entries) < len(existing) * SHRINK_FLOOR and not args.force:
+        fail(
+            "refusing to take %s from %d photo(s) down to %d.\n"
+            "       More than %d%% would go, which usually means the search came back\n"
+            "       short rather than that you untagged that many. If the collection\n"
+            "       declares a gate_tag, check it is actually applied on Flickr:\n"
+            "         bin/check-tags %s\n"
+            "       Re-run with --force once you know the cut is real."
+            % (args.slug, len(existing), len(entries), round((1 - SHRINK_FLOOR) * 100), args.slug)
+        )
+
     if args.dry_run:
         print("\nDry run — would write %d entry(ies) to _data/photos/%s.yml" % (len(entries), args.slug))
         for entry in entries:
             print("  %s  %s  ar=%s  %s" % (entry["id"], entry.get("location") or "-", entry["ar"], entry["src"]))
         return
 
-    # An album or tag import without --location sees the whole collection, so the
-    # manifest is replaced outright. Merging per chapter instead would leave stale
-    # entries behind for any chapter that lost every one of its photographs —
-    # nothing would name that chapter, so nothing would clear it.
-    whole_collection = (args.album or args.tags) and args.location is None
-
+    # Merging per chapter instead of replacing outright would leave stale entries
+    # behind for any chapter that lost every one of its photographs — nothing would
+    # name that chapter, so nothing would clear it.
     if whole_collection:
         merged = entries
     else:

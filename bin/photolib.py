@@ -195,6 +195,50 @@ def known_locations(slug):
     return None if found is None else [c["name"] for c in found]
 
 
+def collection_field(slug, key):
+    """Read a top-level scalar field from one collection's block.
+
+    Collection fields sit at exactly two spaces of indent; chapter fields are
+    deeper and list items start with a dash, so both are skipped. This is not a
+    YAML engine, only enough of one for the fields the importers need.
+    """
+    if not os.path.exists(COLLECTIONS):
+        return None
+    in_block = False
+    with open(COLLECTIONS, encoding="utf-8") as handle:
+        for raw in handle:
+            line = raw.rstrip("\n")
+            if line.lstrip().startswith("#"):
+                continue
+            match = re.match(r"^-\s+slug:\s*(.*)$", line)
+            if match:
+                in_block = unquote(match.group(1)) == slug
+                continue
+            if not in_block or re.match(r"^\s+-\s+", line):
+                continue
+            field = re.match(r"^ {2}(\w+):\s*(.*)$", line)
+            if field and field.group(1) == key:
+                return unquote(field.group(2)) or None
+    return None
+
+
+def gate_tag(slug):
+    """The tag a photograph must carry to belong to this collection at all.
+
+    Without one, tag mode searches for the chapter tags themselves, which makes
+    every chapter tag load-bearing across the whole photostream: a short, ordinary
+    word like `bees` or `portraits` typed on any photograph anywhere in the account
+    pulls it onto the site, and into that chapter. With one, membership is explicit
+    and the search asks for the gate instead, so chapter tags only ever sort
+    photographs that already belong and every other tag is inert — free to use for
+    sharing, search, or groups.
+
+    Returns None when the collection declares no gate, which keeps the old
+    behaviour for collections that have not opted in.
+    """
+    return collection_field(slug, "gate_tag")
+
+
 def collection_slugs():
     slugs = []
     if not os.path.exists(COLLECTIONS):
