@@ -33,7 +33,14 @@ CHAPTERS = {
         "55484050249": "Bees",  # smoker, August — tagged for the homestay too, so precedence stranded it
         "55483993548": "Bees",  # honeycomb, August — tagged for the homestay too, so precedence stranded it
         "55483993663": "Bees",  # bees, August — tagged for the homestay too, so precedence stranded it
-        "55483023332": "Korumdu of Naryn Region",  # portrait, August — a portrait, not an artifact
+        # The portraits. Each is tagged for the place it was made, and Portraits
+        # sits last in _data/photography.yml, so precedence files them under the
+        # place and they never reach the suite on their own. Retagging them
+        # `portraits` alone on Flickr would make these three no-ops.
+        "55478963165": "Portraits",  # portrait 1, August — tagged toi-preparations
+        "55478963590": "Portraits",  # portrait 2, August — tagged toi-preparations
+        "55483023332": "Portraits",  # portrait, August — tagged korumdu-artifacts
+        "55487258306": "Portraits",  # boy on the steps, August — tagged korumdu-artifacts
     },
 }
 
@@ -47,6 +54,11 @@ CAPTIONS = {
         "55484026753": ("", "red badlands en route, August"),
         "55484131218": ("ridgeline climb, August23", "ridgeline climb, August"),
         "55485076103": ("landscapes en route, AugustC_3478", "landscapes en route, August"),
+        # Uploaded 2026-08-25 with camera filenames for titles, so they imported
+        # uncaptioned.
+        "55486274502": ("", "bronze in hand, August"),
+        "55487433754": ("", "coins in sleeves, August"),
+        "55487258306": ("", "boy on the steps, August"),
     },
     "utah-arizona-2021": {
         "55477816799": ("Abandoned Town, April", "abandoned town below the cliffs, April"),
@@ -104,8 +116,6 @@ KEPT = {
         # Toi Preparations
         "55478745399",  # stereos, August
         "55477579052",  # gathering, August
-        "55478963165",  # portrait 1, August
-        "55478963590",  # portrait 2, August
         "55478963980",  # give a dog a bone, August
         "55477580222",  # Plov prep, August
         # Alysh
@@ -152,8 +162,8 @@ KEPT = {
         # Korumdu Artifacts
         "55484402800",  # arrowhead, August
         "55483023302",  # sun wheel, August
-        # Korumdu of Naryn Region
-        "55483023332",  # portrait, August
+        "55486274502",  # bronze in hand, August
+        "55487433754",  # coins in sleeves, August
         # Korumdu to Bokonbayevo
         "55485075773",  # petroglyphs, August
         "55485076103",  # landscapes en route, August
@@ -179,6 +189,11 @@ KEPT = {
         "55484063152",  # mounds, August
         "55485443025",  # home for a bit, August
         "55485051551",  # UAZ up, August
+        # Portraits — out of chronology, as the chapter is
+        "55478963165",  # portrait 1, August
+        "55478963590",  # portrait 2, August
+        "55483023332",  # portrait, August
+        "55487258306",  # boy on the steps, August
     ],
     "utah-arizona-2021": [
         # Zion National Park

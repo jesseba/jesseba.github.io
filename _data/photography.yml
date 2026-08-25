@@ -126,6 +126,10 @@
       tag: bees
     - name: Kojomkul
       tag: kojomkul
+    # Empty as of 2026-08-25: its only photograph was a portrait, and portraits
+    # now gather in their own chapter at the end. An empty chapter is skipped
+    # silently and gets no page, so this renders nothing today — the tag is kept
+    # so the next thing shot in the village has somewhere to land.
     - name: Korumdu of Naryn Region
       tag: korumdu
     - name: Earthquake during hike
@@ -156,3 +160,19 @@
       tag: altyn-arashan
       # "home for a bit". Already 3:2.
       cover: "55485443025"
+    # The faces of the trip, gathered out of chronology as a closing suite —
+    # the one chapter here organised by subject rather than by where the day
+    # went. It sits last so the trip still reads front to back and the suite
+    # lands as a coda.
+    #
+    # That position has a cost worth knowing: order is precedence, so a
+    # photograph tagged both `portraits` and a place tag files under the place
+    # and never reaches here. The `portraits` tag therefore only carries a
+    # frame on its own; the portraits already tagged for a place are moved
+    # here by CHAPTERS in bin/photo_edit.py instead. Tag a new portrait
+    # `portraits` and nothing else, and it lands here with no code change.
+    - name: Portraits
+      tag: portraits
+      # "portrait 2" — the only one of the three already 3:2, so the tile
+      # crops nothing away.
+      cover: "55478963590"
