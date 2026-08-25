@@ -172,18 +172,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55477757051"
-  src: "https://live.staticflickr.com/65535/55477757051_b3286fa95f_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477757051_08ef0ef7f4_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477757051/"
-  location: "On the Road"
-  caption: "Up to Too-Ashuu Pass, August"
-  w: 2048
-  h: 1496
-  tw: 640
-  th: 467
-  ar: 1.369
-
 - id: "55477757296"
   src: "https://live.staticflickr.com/65535/55477757296_2abaca4e14_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55477757296_74b8c0e755_z.jpg"
@@ -195,18 +183,6 @@
   tw: 640
   th: 272
   ar: 2.354
-
-- id: "55477933219"
-  src: "https://live.staticflickr.com/65535/55477933219_b44bfba212_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55477933219_35004cc1e5_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55477933219/"
-  location: "On the Road"
-  caption: "Up to Too-Ashuu Pass, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
 
 - id: "55477381222"
   src: "https://live.staticflickr.com/65535/55477381222_06dd2b6ddf_k.jpg"
@@ -268,18 +244,6 @@
   th: 427
   ar: 1.5004
 
-- id: "55478357849"
-  src: "https://live.staticflickr.com/65535/55478357849_245ac65206_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478357849_4c033dffd2_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478357849/"
-  location: "On the Road"
-  caption: "Suusamyr river en route to Issyk-kul, August"
-  w: 2048
-  h: 1296
-  tw: 640
-  th: 405
-  ar: 1.5802
-
 - id: "55478577790"
   src: "https://live.staticflickr.com/65535/55478577790_cfd64bcea8_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55478577790_9863107ebd_z.jpg"
@@ -291,18 +255,6 @@
   tw: 640
   th: 360
   ar: 1.7778
-
-- id: "55478358084"
-  src: "https://live.staticflickr.com/65535/55478358084_899d291531_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55478358084_aaaed94d04_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55478358084/"
-  location: "On the Road"
-  caption: "tributaries, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
 
 - id: "55478578075"
   src: "https://live.staticflickr.com/65535/55478578075_26648bb73b_k.jpg"
@@ -322,18 +274,6 @@
   page: "https://www.flickr.com/photos/204941863@N08/55483746794/"
   location: "On the Road"
   caption: "river, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
-- id: "55483569941"
-  src: "https://live.staticflickr.com/65535/55483569941_7dadee3337_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55483569941_c1e707408a_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55483569941/"
-  location: "On the Road"
-  caption: "suus landscape, August"
   w: 2048
   h: 1367
   tw: 640
@@ -375,18 +315,6 @@
   tw: 640
   th: 427
   ar: 1.5004
-
-- id: "55483906416"
-  src: "https://live.staticflickr.com/65535/55483906416_875c8bb560_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55483906416_82e227bb80_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55483906416/"
-  location: "On the Road"
-  caption: ""
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
 
 - id: "55484300700"
   src: "https://live.staticflickr.com/65535/55484300700_1b9dc3675a_k.jpg"
@@ -832,18 +760,6 @@
   th: 512
   ar: 1.2495
 
-- id: "55479128548"
-  src: "https://live.staticflickr.com/65535/55479128548_3592df8026_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55479128548_c39324906e_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55479128548/"
-  location: "Er Enish"
-  caption: "rider on the ridge B&W, August"
-  w: 2048
-  h: 1152
-  tw: 640
-  th: 360
-  ar: 1.7778
-
 - id: "55479404715"
   src: "https://live.staticflickr.com/65535/55479404715_c99b1602ee_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55479404715_1ea001913c_z.jpg"
@@ -855,6 +771,18 @@
   tw: 640
   th: 480
   ar: 1.3333
+
+- id: "55479128548"
+  src: "https://live.staticflickr.com/65535/55479128548_3592df8026_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55479128548_c39324906e_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55479128548/"
+  location: "Er Enish"
+  caption: "rider on the ridge B&W, August"
+  w: 2048
+  h: 1152
+  tw: 640
+  th: 360
+  ar: 1.7778
 
 - id: "55479187819"
   src: "https://live.staticflickr.com/65535/55479187819_5f122ebbfd_k.jpg"
@@ -1468,18 +1396,6 @@
   th: 427
   ar: 1.4982
 
-- id: "55484404015"
-  src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55484404015/"
-  location: "Earthquake during hike"
-  caption: "12000 feet elevation, August"
-  w: 2048
-  h: 1365
-  tw: 640
-  th: 427
-  ar: 1.5004
-
 - id: "55484011241"
   src: "https://live.staticflickr.com/65535/55484011241_005682878c_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484011241_3d38f0a4b7_z.jpg"
@@ -1491,6 +1407,18 @@
   tw: 640
   th: 427
   ar: 1.4982
+
+- id: "55484404015"
+  src: "https://live.staticflickr.com/65535/55484404015_fcc9847427_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55484404015_1f3598679d_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55484404015/"
+  location: "Earthquake during hike"
+  caption: "12000 feet elevation, August"
+  w: 2048
+  h: 1365
+  tw: 640
+  th: 427
+  ar: 1.5004
 
 - id: "55484131933"
   src: "https://live.staticflickr.com/65535/55484131933_4fb2009e63_k.jpg"
@@ -1588,24 +1516,24 @@
   th: 427
   ar: 1.4982
 
-- id: "55486274502"
-  src: "https://live.staticflickr.com/65535/55486274502_d6affc607f_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55486274502_55e30df28c_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55486274502/"
-  location: "Korumdu Artifacts"
-  caption: "bronze in hand, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55487433754"
   src: "https://live.staticflickr.com/65535/55487433754_069cf0a588_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55487433754_4a8d09d503_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55487433754/"
   location: "Korumdu Artifacts"
   caption: "coins in sleeves, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55486274502"
+  src: "https://live.staticflickr.com/65535/55486274502_d6affc607f_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55486274502_55e30df28c_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55486274502/"
+  location: "Korumdu Artifacts"
+  caption: "bronze in hand, August"
   w: 2048
   h: 1367
   tw: 640
@@ -1636,24 +1564,24 @@
   th: 427
   ar: 1.4982
 
-- id: "55483972082"
-  src: "https://live.staticflickr.com/65535/55483972082_d44615a7e6_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55483972082_7e81db2b93_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55483972082/"
-  location: "Eagle Hunter"
-  caption: "hunting, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55484960981"
   src: "https://live.staticflickr.com/65535/55484960981_8f5778d4c3_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484960981_756ba799ed_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484960981/"
   location: "Eagle Hunter"
   caption: "Eagle profile, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55483972082"
+  src: "https://live.staticflickr.com/65535/55483972082_d44615a7e6_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55483972082_7e81db2b93_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55483972082/"
+  location: "Eagle Hunter"
+  caption: "hunting, August"
   w: 2048
   h: 1367
   tw: 640
@@ -1780,24 +1708,24 @@
   th: 427
   ar: 1.4982
 
-- id: "55485387445"
-  src: "https://live.staticflickr.com/65535/55485387445_9d604d3820_k.jpg"
-  thumb: "https://live.staticflickr.com/65535/55485387445_867ccab2ef_z.jpg"
-  page: "https://www.flickr.com/photos/204941863@N08/55485387445/"
-  location: "Issyk-Kul"
-  caption: "Issyk-kul is cool, August"
-  w: 2048
-  h: 1367
-  tw: 640
-  th: 427
-  ar: 1.4982
-
 - id: "55484007752"
   src: "https://live.staticflickr.com/65535/55484007752_d66c169f0e_k.jpg"
   thumb: "https://live.staticflickr.com/65535/55484007752_8a359183b6_z.jpg"
   page: "https://www.flickr.com/photos/204941863@N08/55484007752/"
   location: "Issyk-Kul"
   caption: "end route to Karakol, August"
+  w: 2048
+  h: 1367
+  tw: 640
+  th: 427
+  ar: 1.4982
+
+- id: "55485387445"
+  src: "https://live.staticflickr.com/65535/55485387445_9d604d3820_k.jpg"
+  thumb: "https://live.staticflickr.com/65535/55485387445_867ccab2ef_z.jpg"
+  page: "https://www.flickr.com/photos/204941863@N08/55485387445/"
+  location: "Issyk-Kul"
+  caption: "Issyk-kul is cool, August"
   w: 2048
   h: 1367
   tw: 640
