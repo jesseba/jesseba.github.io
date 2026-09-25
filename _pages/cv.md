@@ -4,5 +4,5 @@ permalink: /cv/
 title: cv
 nav: false
 nav_order: 3
-redirect: /assets/pdf/Jesseba_CV_sept26.pdf
+redirect: /assets/pdf/Jesseba_CV_sept26_v2.pdf
 ---
