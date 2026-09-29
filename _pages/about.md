@@ -14,12 +14,12 @@ publications: true
 social: true
 ---
 
-I'm Jesseba, a Network Science PhD student at Northeastern University. I'm advised by [Dr. Sam Scarpino](https://www.networkscienceinstitute.org/people/samuel-v-scarpino). My research bridges neuroscience and artificial intelligence through network science and information theory.
+I'm Jesseba, a Network Science PhD student at Northeastern University. I'm advised by [Dr. Sam Scarpino](https://www.networkscienceinstitute.org/people/samuel-v-scarpino). I study how learning alters networks in both the brain and machines, and for this I make use of methods from network science and information theory.
 
-I study how learning and adaptation reshape networks in brains and machines. My motivation is identifying the principles that predict when cognitive structures reconfigure and how those changes affect information flow and function. In the brain I track how neurons' functional roles shift as animals learn and relearn, and how those shifts predict later behavior. In artificial networks, I study how representations evolve through the transformer residual stream. Composition is what connects them: these systems generalize by recombining what they already know, and I study  what that flexibility costs them.
+In the brain I study how the functional roles of neurons change as animals learn and relearn, and also how these changes can predict future behaviour. With respect to transformers I look at the representations as they progress layer by layer through the residual stream, investigating how the dynamics of these computations are related to the network's structure. Composition links them together since both kinds of systems achieve generalisation by recombining what they already know. This flexibility comes at a cost because a system that is able to compose freely loses its ability to tell the inputs apart. I am interested in finding out where this trade-off lies and what causes it.
 
-Before joining Northeastern, I explored problems in systems neuroscience, studying how motivational states influence attention to sensory cues in the [Andermann Lab](https://www.andermannlab.com/). I investigated domain adaptation of medical imaging models with [William Lotter](https://ds.dfci.harvard.edu/our-people/bill-lotter/) at Dana Farber Cancer Institute.
+Before joining Northeastern, I spent five years in [Mark Andermann's lab](https://www.andermannlab.com/) at Harvard Medical School, studying how hunger and other motivational states change what visual cortex responds to. I then worked with [Bill Lotter](https://ds.dfci.harvard.edu/our-people/bill-lotter/) at Dana-Farber Cancer Institute on how medical imaging models behave when the data they receive differs statistically from the data they were trained on. 
 
-In my free time, I co-write [**Of Two Minds**](https://oftwominds.substack.com), a newsletter with my partner, Grigori Guitchounts.
+In my free time, I co-write [**Of Two Minds**](https://oftwominds.substack.com), a newsletter with [Grigori Guitchounts](https://www.guitchounts.com/).
 
 When I travel I bring more camera than I need, usually to places with bad roads. Some of it [ends up here](/photography/).
